@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# dot
+#
+# Updates dotfiles by pulling from the github.
+
+export ZSH=$HOME/.dotfiles
+
+# Pull changes
+( cd $ZSH; git pull; )
+
+# Setup OSX defaults
+$ZSH/osx/set-defaults.sh
+
+# Upgrade brew
+brew update
+
+# Install brew packages
+$ZSH/brew/install.sh 2>&1
+
+# Update npm
+npm update -g npm
+
+# Update global npm packages
+npm update -g
