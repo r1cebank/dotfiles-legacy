@@ -11,3 +11,6 @@ atom.symlink/projects.cson
 
 # Ignore generated git config file
 git/gitconfig.symlink
+
+# Ignore generated npm config gile
+nodejs/npmrc.symlink

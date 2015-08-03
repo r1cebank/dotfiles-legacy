@@ -1,0 +1,5 @@
+gulp-cli
+mocha
+nodemon
+node-inspector
+jshint

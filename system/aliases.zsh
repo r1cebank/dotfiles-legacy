@@ -28,6 +28,7 @@ alias .6='cd ../../../../../../'            # Go back 6 directory levels
 alias c='clear'                             # Clear terminal
 
 # ---------------------------------------------------------------------------- #
-# Copy public key to clipboard.                                                #
+# Various handy utilities.                                                     #
 # ---------------------------------------------------------------------------- #
+alias path='echo -e ${PATH//:/\\n}'         # Echo all executable Paths
 alias pubkey='more ~/.ssh/id_rsa.pub | pbcopy | echo "=> Public key copied."'
