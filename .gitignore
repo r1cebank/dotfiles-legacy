@@ -1,1 +1,13 @@
 
+# Ignore APM package contents and machine-specific config files
+atom.symlink/.apm
+atom.symlink/.node-gyp
+atom.symlink/.storage
+atom.symlink/compile-cache
+atom.symlink/packages
+atom.symlink/storage
+atom.symlink/themes
+atom.symlink/projects.cson
+
+# Ignore generated git config file
+git/gitconfig.symlink
