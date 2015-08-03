@@ -7,12 +7,11 @@
 # Check for apm
 if test ! $(which apm)
 then
-  echo "  Installing Atom Package Manager for you."
+  echo "  Did not find apm, skipping Atom packages."
 
-  # Install apm from npm
-  npm install --global atom-package-manager
+else
+
+  echo "  Installing atom packages."
+  apm install $(tr '\n' ' ' < $ZSH/atom.symlink/packages.list)
 
 fi
-
-echo "  Installing atom packages."
-apm install $(tr '\n' ' ' < $ZSH/atom.symlink/packages.list)
