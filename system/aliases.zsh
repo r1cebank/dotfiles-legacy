@@ -31,4 +31,3 @@ alias c='clear'                             # Clear terminal
 # Various handy utilities.                                                     #
 # ---------------------------------------------------------------------------- #
 alias path='echo -e ${PATH//:/\\n}'         # Echo all executable Paths
-alias pubkey='more ~/.ssh/identity.rsa.pub | pbcopy | echo "=> Public key copied."'
