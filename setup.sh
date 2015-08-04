@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Sets up the machine with essential utilities and bootstraps the dotfiles.
 
