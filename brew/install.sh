@@ -6,6 +6,9 @@
 # using Homebrew.
 
 # Check for Homebrew
+if [[ $(uname) == 'Darwin' ]]
+then
+
 if test ! $(which brew)
 then
   echo "  Installing Homebrew for you."
@@ -22,6 +25,7 @@ then
   # Install homebrew cask addon
   brew install caskroom/cask/brew-cask
 
+fi
 fi
 
 exit 0

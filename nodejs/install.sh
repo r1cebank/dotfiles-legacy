@@ -9,8 +9,19 @@ if test ! $(which node)
 then
   echo "  Installing Node.js for you."
 
-  # Install Node.js using homebrew
-  brew install node
+
+  # Mac OSX: Install Node.js using homebrew
+  if [[ $(uname) == 'Darwin' ]]
+  then
+    brew install node
+  fi
+
+  # Ubuntu: Install Node.js using apt-get
+  if [[ $(uname) == 'Linux' ]]
+  then
+    curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+    sudo apt-get install -y nodejs
+  fi
 
 fi
 

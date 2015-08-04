@@ -6,8 +6,7 @@ these should also work on any Linux or Unix machine.
 ```
 $ git clone https://github.com/jluchiji/dotfiles ~/.dotfiles
 $ cd ~/.dotfiles
-$ ./script/install
-$ ./script/bootstrap
+$ ./setup.sh
 ```
 This should do the trick.
 

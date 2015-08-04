@@ -9,14 +9,19 @@ export ZSH=$HOME/.dotfiles
 # Pull changes
 ( cd $ZSH; git pull; )
 
-# Setup OSX defaults
-$ZSH/osx/set-defaults.sh
+if [[ $(uname) == 'Darwin' ]]
+then
 
-# Upgrade brew
-brew update
+  # Setup OSX defaults
+  $ZSH/osx/set-defaults.sh
 
-# Install brew packages
-$ZSH/brew/install.sh 2>&1
+  # Upgrade brew
+  brew update
+
+  # Install brew packages
+  $ZSH/brew/install.sh 2>&1
+
+fi
 
 # Update npm
 npm update -g npm
