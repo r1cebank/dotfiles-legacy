@@ -3,7 +3,7 @@
 alias reload!='. ~/.zshrc'
 
 # Updates the .dotfiles
-alias update!='(cd $ZSH > /dev/null; git pull;)'
+alias update!='(cd $ZSH > /dev/null; git pull;); reload!'
 
 # Fix sudo + alias bug
 alias sudo='sudo '
