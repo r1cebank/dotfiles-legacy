@@ -7,7 +7,7 @@
 
 # Copies the basename of current working directory to the clipboard
 cpwd() {
-  basename $(pwd) | tr -d '\n' | pbcopy
+  basename "$(pwd)" | tr -d '\n' | pbcopy
   echo ">> Directory name copied."
 }
 
@@ -20,4 +20,9 @@ cpath() {
 # Goes to the directory whose path is in the clipboard
 ccd() {
   cd "$(pbpaste)"
+}
+
+# Exports the directory in the clipboard to PATH
+cexp() {
+  export PATH="$(pbpaste):$PATH";
 }
