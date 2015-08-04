@@ -25,6 +25,9 @@ then
   # Install homebrew cask addon
   brew install caskroom/cask/brew-cask
 
+  # Install GNU CLI utilities
+  brew install gnu-sed --with-default-names
+
 fi
 fi
 
