@@ -273,7 +273,7 @@ prompt_pure_async_callback() {
 prompt_pure_setup() {
 	# prevent percentage showing up
 	# if output doesn't end with a newline
-	export PROMPT_EOL_MARK=''
+	export PROMPT_EOL_MARK='%F{94}↩%F{242}'
 
 	prompt_opts=(subst percent)
 
