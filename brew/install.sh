@@ -27,6 +27,7 @@ then
 
   # Install GNU CLI utilities
   brew install gnu-sed --with-default-names
+  brew install zsh
 
 fi
 fi
