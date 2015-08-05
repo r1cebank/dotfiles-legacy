@@ -17,14 +17,19 @@ REGEX_EXT="\.([\w\d]+)$"
 
 # Rename anime in a folder
 aniren() {
+  BASENAME=$1
+  if [[ -z $BASENAME ]]; then
+    BASENAME=$(cwd);
+  fi
   REGEX=".*(?:[$DELIMITER_L])($REGEX_INDEX)(?:[$DELIMITER_R]).*$REGEX_EXT"
-  renamer -e -f "$REGEX" -r "$(cwd)[\$1].\$2" --dry-run "*.{mp4,mkv,ass}"
+  REPLACE=$BASENAME"[\$1].\$2"
+  renamer -e -f "$REGEX" -r "$REPLACE" --dry-run "*.{mp4,mkv,ass}"
 
   echo
   echo " - Press [Enter] to rename, [Ctrl-C] to cancel"
   read -n 1
 
-  renamer -e -f "$REGEX" -r "$(cwd)[\$1].\$2" "*.{mp4,mkv,ass}" > /dev/null
+  renamer -e -f "$REGEX" -r "$REPLACE" "*.{mp4,mkv,ass}" > /dev/null
 
   echo
   echo " - Complete!"
