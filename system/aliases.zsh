@@ -30,4 +30,5 @@ alias c='clear'                             # Clear terminal
 # ---------------------------------------------------------------------------- #
 # Various handy utilities.                                                     #
 # ---------------------------------------------------------------------------- #
+alias cwd='basename "$(pwd)" | tr -d "\n"'
 alias path='echo -e ${PATH//:/\\n}'         # Echo all executable Paths
