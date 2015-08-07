@@ -3,3 +3,4 @@ mocha
 nodemon
 node-inspector
 jshint
+webpack
