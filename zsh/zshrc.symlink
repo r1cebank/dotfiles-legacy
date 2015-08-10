@@ -39,3 +39,8 @@ do
 done
 
 unset config_files
+
+# Execute tmux if using SSH
+if command -v tmux > /dev/null; then
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
