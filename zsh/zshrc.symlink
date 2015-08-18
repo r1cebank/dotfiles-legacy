@@ -41,6 +41,8 @@ done
 unset config_files
 
 # Execute tmux if using SSH
+if [[ $(uname) == Linux ]]; then
 if command -v tmux > /dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+  [ -n $SSH_CLIENT ] && [ -z $TMUX ] && exec tmux
+fi
 fi

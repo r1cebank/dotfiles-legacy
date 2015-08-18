@@ -2,13 +2,27 @@
 These are the dotfiles I am using on Mac OS X, though, theoretically speaking,
 these should also work on any Linux or Unix machine.
 
+Running the setup of these dotfiles should install Homebrew (OS X only) and
+Node.js for you.
+
 ## Using These
 ```
-$ git clone https://github.com/jluchiji/dotfiles ~/.dotfiles
-$ cd ~/.dotfiles
-$ ./setup.sh
+$ curl https://raw.githubusercontent.com/jluchiji/dotfiles/master/setup.sh > setup.sh
+$ bash setup.sh
 ```
 This should do the trick.
+
+## Utility Commands / Aliases
+
+### `reload!`
+
+
+### `dot`
+Updates dotfiles from Github repo, also updates homebrew, homebrew packages and
+global NPM packages.
+
+
+
 
 ## Notes
 1. In order to remove the need to `sudo` every time I install global npm
