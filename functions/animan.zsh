@@ -12,7 +12,7 @@ fi
 # Constants and expressions
 DELIMITER_L="\[\( "
 DELIMITER_R="\]\) "
-REGEX_INDEX="\d{2}"
+REGEX_INDEX="(\d{2})(?:v\d+)?"
 REGEX_EXT="\.([\w\d]+)$"
 
 # Rename anime in a folder
@@ -21,7 +21,7 @@ aniren() {
   if [[ -z $BASENAME ]]; then
     BASENAME=$(cwd);
   fi
-  REGEX=".*(?:[$DELIMITER_L])($REGEX_INDEX)(?:[$DELIMITER_R]).*$REGEX_EXT"
+  REGEX=".*(?:[$DELIMITER_L])$REGEX_INDEX(?:[$DELIMITER_R]).*$REGEX_EXT"
   REPLACE=$BASENAME"[\$1].\$2"
   renamer -e -f "$REGEX" -r "$REPLACE" --dry-run "*.{mp4,mkv,ass}"
 

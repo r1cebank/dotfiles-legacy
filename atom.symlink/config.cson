@@ -8,7 +8,7 @@
   editor:
     invisibles: {}
     scrollPastEnd: true
-    fontFamily: "\"Input Mono\""
+    fontFamily: "Hack"
     fontSize: 13
   "atom-beautify":
     _analyticsUserId: "2c589e06-3a07-4042-87c8-12fe7233212a"

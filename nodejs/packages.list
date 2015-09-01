@@ -4,3 +4,5 @@ nodemon
 node-inspector
 jshint
 webpack
+bunyan
+renamer
