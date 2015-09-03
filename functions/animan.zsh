@@ -12,7 +12,7 @@ fi
 # Constants and expressions
 DELIMITER_L="\[\( "
 DELIMITER_R="\]\) "
-REGEX_INDEX="(\d{2})(?:v\d+)?"
+REGEX_INDEX="(\d{2}(?:\.\d+)?)(?:v\d+)?"
 REGEX_EXT="\.([\w\d]+)$"
 
 # Rename anime in a folder

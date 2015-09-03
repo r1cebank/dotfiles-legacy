@@ -1,2 +1,5 @@
 # Add GNU utils to PATH
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+if test $(which brew)
+then
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+fi
