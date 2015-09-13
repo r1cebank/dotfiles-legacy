@@ -23,3 +23,4 @@
   "project-manager": {}
   "tree-view":
     hideIgnoredNames: true
+  "atom-typescript": {}

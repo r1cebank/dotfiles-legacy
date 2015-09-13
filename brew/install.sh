@@ -21,6 +21,6 @@ then
 
 fi
 
-exec ../osx/brew.sh
+exec $ZSH/osx/brew.sh
 
 exit 0
