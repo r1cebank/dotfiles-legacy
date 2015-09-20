@@ -6,3 +6,7 @@ export MANPATH="$HOME/.npm/share/man:$MANPATH"
 
 # If I use these dotfiles, most likely this is a development machine
 export NODE_ENV="development"
+
+# Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+source $(brew --prefix nvm)/nvm.sh

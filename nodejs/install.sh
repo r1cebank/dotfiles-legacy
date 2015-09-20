@@ -13,6 +13,7 @@ then
   # Mac OSX: Install Node.js using homebrew
   if [[ $(uname) == 'Darwin' ]]
   then
+    brew install nvm
     brew install node
   fi
 
