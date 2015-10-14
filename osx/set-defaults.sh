@@ -24,11 +24,10 @@ defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool 
 defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
-# Disable guest user
-sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
-
 # Disable transparency in the menu bar and elsewhere on Yosemite
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
+# Display crash dialogs as notifications
+defaults write com.apple.CrashReporter UseUNC 1
 
 fi

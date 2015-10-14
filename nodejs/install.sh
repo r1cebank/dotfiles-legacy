@@ -20,6 +20,8 @@ then
   # Ubuntu: Install Node.js using apt-get
   if [[ $(uname) == 'Linux' ]]
   then
+    echo ''
+    echo '  We need to sudo to install Node.js'
     curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
     sudo apt-get install -y nodejs
   fi
