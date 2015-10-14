@@ -21,6 +21,9 @@ then
   # Install brew packages
   $ZSH/brew/install.sh 2>&1
 
+  # Install iTerm2 color profile
+  open $ZSH/iTerm/black-screen.itermcolors
+
 fi
 
 # Update npm
