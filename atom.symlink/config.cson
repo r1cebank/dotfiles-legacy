@@ -23,4 +23,6 @@
   "project-manager": {}
   "tree-view":
     hideIgnoredNames: true
-  "atom-typescript": {}
+  "linter-eslint":
+    disableWhenNoEslintrcFileInPath: true
+  "language-babel": {}
