@@ -146,6 +146,8 @@ install_dotfiles () {
   done
 }
 
+export ZSH=$HOME/.dotfiles
+
 setup_gitconfig
 setup_npmrc
 install_dotfiles
