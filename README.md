@@ -7,7 +7,7 @@ Node.js for you.
 
 ## Using These
 ```
-$ curl https://raw.githubusercontent.com/jluchiji/dotfiles/master/setup.sh > setup.sh
+$ curl http://git.io/vOEzt > setup.sh
 $ bash setup.sh
 ```
 This should do the trick.
