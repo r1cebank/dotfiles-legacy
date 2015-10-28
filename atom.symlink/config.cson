@@ -4,7 +4,10 @@
     userId: "12c241e4-ad21-7c4e-ed25-26182f8e4d7f"
   welcome:
     showOnStartup: false
-  core: {}
+  core:
+    disabledPackages: [
+      "linter-javac"
+    ]
   editor:
     invisibles: {}
     scrollPastEnd: true
@@ -26,3 +29,12 @@
   "linter-eslint":
     disableWhenNoEslintrcFileInPath: true
   "language-babel": {}
+  "atom-typescript": {}
+  "linter-eslint":
+    useGlobalEslint: true
+    globalNodePath: "~/.npm/lib/node_modules"
+  "dash":
+    "grammars":
+      "JavaScript": [ "nodejs" ]
+    "filenames":
+      "gulpfile.js": [ "gulp" ]
