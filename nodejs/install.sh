@@ -13,6 +13,7 @@ if ! type "node" > /dev/null; then
   git clone https://github.com/creationix/nvm.git ~/.nvm
   cd ~/.nvm
   git checkout `git describe --abbrev=0 --tags`
+  . ~/.nvm/nvm.sh
 
   # Install latest release of Node.js v4.x
   nvm install v4.3.0

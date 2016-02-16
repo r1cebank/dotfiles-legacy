@@ -11,9 +11,9 @@ export MANPATH="$HOME/.npm/share/man:$MANPATH"
 export NODE_ENV="development"
 
 # Node Version Manager
-if type "nvm" > /dev/null; then
-  export NVM_DIR="$HOME/.nvm"
-  source NVM_DIR/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+if -f $NVM_DIR/nvm.sh; then
+  source $NVM_DIR/nvm.sh
 else
   echo "NVM is not installed!"
 fi
