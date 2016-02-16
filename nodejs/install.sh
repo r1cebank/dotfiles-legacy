@@ -4,8 +4,8 @@
 #
 # This will install Node.js, npm and a few frequently used global deps.
 
-# Check for node
-if ! type "node" > /dev/null; then
+# Check for nvm
+if ! type "nvm" > /dev/null; then
 
   echo "  Installing Node.js for you."
 
