@@ -5,10 +5,8 @@
 # This will install atom editor packages.
 
 # Check for apm
-if test ! $(which apm)
-then
+if [ ! type "apm" > /dev/null ]; then
   echo "  Did not find apm, skipping Atom packages."
-
 else
 
   echo "  Installing atom packages."
