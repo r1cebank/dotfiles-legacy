@@ -5,7 +5,8 @@
 # This will install Node.js, npm and a few frequently used global deps.
 
 # Check for node
-if ! type "node" > /dev/null;
+if ! type "node" > /dev/null; then
+
   echo "  Installing Node.js for you."
 
   # Manually clone NVM repo for the newest release
