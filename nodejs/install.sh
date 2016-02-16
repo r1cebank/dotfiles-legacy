@@ -5,26 +5,16 @@
 # This will install Node.js, npm and a few frequently used global deps.
 
 # Check for node
-if test ! $(which node)
-then
+if ! type "node" > /dev/null;
   echo "  Installing Node.js for you."
 
+  # Manually clone NVM repo for the newest release
+  git clone https://github.com/creationix/nvm.git ~/.nvm
+  cd ~/.nvm
+  git checkout `git describe --abbrev=0 --tags`
 
-  # Mac OSX: Install Node.js using homebrew
-  if [[ $(uname) == 'Darwin' ]]
-  then
-    brew install nvm
-    brew install node
-  fi
-
-  # Ubuntu: Install Node.js using apt-get
-  if [[ $(uname) == 'Linux' ]]
-  then
-    echo ''
-    echo '  We need to sudo to install Node.js'
-    curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
-    sudo apt-get install -y nodejs
-  fi
+  # Install latest release of Node.js v4.x
+  nvm install v4.3.0
 
 fi
 

@@ -1,7 +1,6 @@
 # OS X specific aliases
-if [[ $(uname) == 'Darwin' ]]
-then
+if [ "$PLATFORM" = "darwin" ]; then
 
-alias f='open -a Finder ./'                 # Open current directory in Finder
+  alias f='open -a Finder ./'               # Open current directory in Finder
 
 fi

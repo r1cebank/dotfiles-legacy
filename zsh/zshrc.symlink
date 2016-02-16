@@ -15,7 +15,7 @@ fi
 # Platform detection
 # Mainly to differentiate between OS X, Ubuntu and CentOS
 PLATFORM=$(uname | tr "[:upper:]" "[:lower:]")
-if [ "$PLATFORM" == "linux" ]; then
+if [ "$PLATFORM" = "linux" ]; then
   if type "yum" > /dev/null; then
     PLATFORM="centos"
   fi

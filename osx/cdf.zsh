@@ -2,7 +2,7 @@
 # cd to the top finder window
 #
 
-if [[ $(uname) == 'Darwin' ]]; then
+if [ "$PLATFORM" = "darwin" ]; then
 
 cdf () {
     currFolderPath=$( /usr/bin/osascript <<EOT
