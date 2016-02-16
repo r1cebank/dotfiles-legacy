@@ -10,8 +10,8 @@ if [[ -n $(type foo >/dev/null 2>&1) ]]; then
 fi
 
 # Constants and expressions
-DELIMITER_L="\[\( "
-DELIMITER_R="\]\) "
+DELIMITER_L="\[\( 第"
+DELIMITER_R="\]\) 話"
 REGEX_INDEX="(\d{2}(?:\.\d+)?)(?:v\d+)?"
 REGEX_EXT="\.([\w\d]+)$"
 
