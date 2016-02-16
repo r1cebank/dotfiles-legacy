@@ -8,6 +8,7 @@ atom.symlink/packages
 atom.symlink/storage
 atom.symlink/themes
 atom.symlink/projects.cson
+atom.symlink/blob-store
 
 # Ignore generated git config file
 git/gitconfig.symlink
