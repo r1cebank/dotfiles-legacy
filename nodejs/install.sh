@@ -5,18 +5,12 @@
 # This will install Node.js, npm and a few frequently used global deps.
 
 # Check for nvm
-if ! type "nvm" > /dev/null; then
+if ! type "n" > /dev/null; then
 
   echo "  Installing Node.js for you."
 
-  # Manually clone NVM repo for the newest release
-  git clone https://github.com/creationix/nvm.git ~/.nvm
-  cd ~/.nvm
-  git checkout `git describe --abbrev=0 --tags`
-  . ~/.nvm/nvm.sh
-
-  # Install latest release of Node.js v4.x
-  nvm install v4.3.0
+  # Install n and latest LTS node.js
+  curl -L http://git.io/n-install | bash -s -- -y lts
 
 fi
 
