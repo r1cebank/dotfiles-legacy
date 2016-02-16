@@ -12,7 +12,7 @@ export NODE_ENV="development"
 
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
-if -f $NVM_DIR/nvm.sh; then
+if [ -f "$NVM_DIR/nvm.sh" ]; then
   source $NVM_DIR/nvm.sh
 else
   echo "NVM is not installed!"
