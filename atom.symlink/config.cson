@@ -8,6 +8,7 @@
     disabledPackages: [
       "linter-javac"
     ]
+    openEmptyEditorOnStart: false
   editor:
     invisibles: {}
     scrollPastEnd: true
@@ -27,14 +28,16 @@
   "tree-view":
     hideIgnoredNames: true
   "linter-eslint":
-    disableWhenNoEslintrcFileInPath: true
+    globalNodePath: "~/.npm/lib/node_modules"
   "language-babel": {}
   "atom-typescript": {}
-  "linter-eslint":
-    useGlobalEslint: true
-    globalNodePath: "~/.npm/lib/node_modules"
-  "dash":
-    "grammars":
-      "JavaScript": [ "nodejs" ]
-    "filenames":
-      "gulpfile.js": [ "gulp" ]
+  dash:
+    grammars:
+      JavaScript: [
+        "nodejs"
+      ]
+    filenames:
+      "gulpfile.js": [
+        "gulp"
+      ]
+  docblockr: {}
