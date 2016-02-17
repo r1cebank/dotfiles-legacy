@@ -13,7 +13,7 @@ if ! type "n" > /dev/null; then
   curl -L http://git.io/n-install | bash -s -- -n -y lts
 
   # Reload nodejs environment variables
-  source $ZSH/nodejs/env.zsh
+  source $HOME/.dotfiles/nodejs/env.zsh
 
   # Install the last node lts
   n lts
