@@ -23,6 +23,7 @@ if [ "$PLATFORM" = "linux" ]; then
     PLATFORM="debian"
   fi
 fi
+export PLATFORM
 
 # all of our zsh files
 typeset -U config_files
