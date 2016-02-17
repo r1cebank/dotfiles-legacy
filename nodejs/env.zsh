@@ -10,10 +10,6 @@ export MANPATH="$HOME/.npm/share/man:$MANPATH"
 # If I use these dotfiles, most likely this is a development machine
 export NODE_ENV="development"
 
-# Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-if [ -f "$NVM_DIR/nvm.sh" ]; then
-  source $NVM_DIR/nvm.sh
-else
-  echo "NVM is not installed!"
-fi
+# Set n prefix and add node binaries to path
+export N_PREFIX="$HOME/n";
+[[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
