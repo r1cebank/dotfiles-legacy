@@ -2,9 +2,24 @@
 #
 # Sets up the machine with essential utilities and bootstraps the dotfiles.
 
+# Platform detection
+# Mainly to differentiate between OS X, Ubuntu and CentOS
+PLATFORM=$(uname | tr "[:upper:]" "[:lower:]")
+if [ "$PLATFORM" = "linux" ]; then
+  if type "yum" > /dev/null; then
+    PLATFORM="centos"
+  fi
+  if type "apt-get" > /dev/null; then
+    PLATFORM="debian"
+  fi
+fi
+
 # Install gcc, git and zsh if this is Linux
-if [[ $(uname) == 'Linux' ]]
-then sudo apt-get install build-essential git zsh; fi
+if [ "$PLATFORM" = "ubuntu" ]; then
+  sudo apt-get install build-essential git zsh
+elif [ "$PLATFORM" = "centos" ]; then
+  sudo yum install gcc gcc-c++ make openssl-devel git
+fi
 
 # Clone/pull the jluchiji/dotfiles
 if [[ -d $HOME/.dotfiles ]]

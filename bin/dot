@@ -9,8 +9,7 @@ export ZSH=$HOME/.dotfiles
 # Pull changes
 ( cd $ZSH; git pull; )
 
-if [[ $(uname) == 'Darwin' ]]
-then
+if [ "$PLATFORM" = "darwin" ]; then
 
   # Setup OSX defaults
   $ZSH/osx/set-defaults.sh
@@ -30,4 +29,4 @@ fi
 npm update -g npm
 
 # Update global npm packages
-npm update -g
+npm upgrade -g
