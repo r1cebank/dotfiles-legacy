@@ -15,7 +15,7 @@ if [ "$PLATFORM" = "linux" ]; then
 fi
 
 # Install gcc, git and zsh if this is Linux
-if [ "$PLATFORM" = "ubuntu" ]; then
+if [ "$PLATFORM" = "debian" ]; then
   sudo apt-get install build-essential git zsh
 elif [ "$PLATFORM" = "centos" ]; then
   sudo yum install gcc gcc-c++ make openssl-devel git
