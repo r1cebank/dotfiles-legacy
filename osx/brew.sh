@@ -25,6 +25,7 @@ then
   brew install git
   brew install heroku-toolbelt
   brew install redis
+  brew install direnv
 
   # Install OS X applications
   brew cask install atom
