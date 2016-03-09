@@ -21,7 +21,7 @@ elif [ "$PLATFORM" = "centos" ]; then
   sudo yum install gcc gcc-c++ make openssl-devel git
 fi
 
-# Clone/pull the jluchiji/dotfiles
+# Clone/pull the r1cebank/dotfiles
 if [[ -d $HOME/.dotfiles ]]
 then
   ( cd $HOME/.dotfiles; git pull; )
