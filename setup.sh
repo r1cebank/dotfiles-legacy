@@ -26,7 +26,7 @@ if [[ -d $HOME/.dotfiles ]]
 then
   ( cd $HOME/.dotfiles; git pull; )
 else
-  git clone https://github.com/jluchiji/dotfiles ~/.dotfiles
+  git clone https://github.com/r1cebank/dotfiles ~/.dotfiles
 fi
 
 # Setup the envar for dotfiles dir

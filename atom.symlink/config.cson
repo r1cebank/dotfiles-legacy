@@ -12,8 +12,9 @@
   editor:
     invisibles: {}
     scrollPastEnd: true
-    fontFamily: "Hack"
+    fontFamily: "Monaco"
     fontSize: 13
+    tabLength: 4
   "atom-beautify":
     _analyticsUserId: "2c589e06-3a07-4042-87c8-12fe7233212a"
   "tool-bar":

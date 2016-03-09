@@ -31,11 +31,8 @@ then
   brew cask install atom
   brew cask install dropbox
   brew cask install google-chrome
-  brew cask install flux
   brew cask install caffeine
   brew cask install iterm2
-  brew cask install karabiner
-  brew cask install seil
   brew cask install vlc
 
   # Font management
