@@ -7,3 +7,4 @@ project-manager
 language-flex
 language-bison
 merge-conflicts
+linter-eslint
