@@ -46,7 +46,8 @@ then
   brew cask install gitkraken
   brew cask install steam
   brew cask install mplayerx
-
+  brew cask install textexpander
+  
   # Font management
   brew tap caskroom/fonts
   brew cask install font-input
