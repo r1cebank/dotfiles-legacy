@@ -35,6 +35,17 @@ then
   brew cask install caffeine
   brew cask install iterm2
   brew cask install vlc
+  brew cask install go2shell
+  brew cask install diskmaker-x
+  brew cask install appcleaner
+  brew cask install nylas-n1
+  brew cask install skype
+  brew cask install visual-studio-code
+  brew cask install github-desktop
+  brew cask install webstorm
+  brew cask install gitkraken
+  brew cask install steam
+  brew cask install mplayerx
 
   # Font management
   brew tap caskroom/fonts
