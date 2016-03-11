@@ -47,7 +47,8 @@ then
   brew cask install steam
   brew cask install mplayerx
   brew cask install textexpander
-  
+  brew cask install sketch
+
   # Font management
   brew tap caskroom/fonts
   brew cask install font-input
