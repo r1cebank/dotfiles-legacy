@@ -23,9 +23,6 @@ if [ "$PLATFORM" = "darwin" ]; then
   defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
   defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
-  # Disable transparency in the menu bar and elsewhere on Yosemite
-  defaults write com.apple.universalaccess reduceTransparency -bool true
-
   # Display crash dialogs as notifications
   defaults write com.apple.CrashReporter UseUNC 1
 
