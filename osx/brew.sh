@@ -3,6 +3,7 @@
 # Brew packages for OS X setup.
 #
 
+PLATFORM=$(uname | tr "[:upper:]" "[:lower:]")
 if [ "$PLATFORM" = "darwin" ]
 then
 
