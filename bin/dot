@@ -18,7 +18,7 @@ if [ "$PLATFORM" = "darwin" ]; then
   brew update
 
   # Install brew packages
-  $ZSH/brew/install.sh
+  $ZSH/brew/installbrew.sh
 
   # Install iTerm2 color profile
   open $ZSH/iTerm/Solarized_Dark.itermcolors
