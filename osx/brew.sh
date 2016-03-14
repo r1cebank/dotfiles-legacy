@@ -50,6 +50,7 @@ then
   brew cask install mplayerx
   brew cask install textexpander
   brew cask install sketch
+  brew cask install macdown
 
   # Font management
   brew tap caskroom/fonts
