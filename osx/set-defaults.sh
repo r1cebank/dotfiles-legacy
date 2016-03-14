@@ -7,7 +7,6 @@
 #
 # Run ./set-defaults.sh and you'll be good to go.
 
-PLATFORM=$(uname | tr "[:upper:]" "[:lower:]")
 if [ "$PLATFORM" = "darwin" ]; then
 
   # Show the ~/Library folder.
@@ -27,7 +26,8 @@ if [ "$PLATFORM" = "darwin" ]; then
   # Disable guest access
   sudo defaults write /Library/Preferences/com.apple.AppleFileServer guestAccess -bool NO
   sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server AllowGuestAccess -bool NO
-
+  sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool NO
+  
   # Display crash dialogs as notifications
   defaults write com.apple.CrashReporter UseUNC 1
 
