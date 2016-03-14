@@ -15,17 +15,18 @@ defaults write com.apple.dock persistent-apps -array-add $dockDataPre$(readlink 
 defaults write com.apple.dock persistent-apps -array-add $dockDataPre$(readlink ~/Applications/Atom.app)$dockDataPro
 
 #Slack
-defaults write com.apple.dock persistent-apps -array-add $dockDataPre$(readlink ~/Applications/Slack.app)$dockDataPro
+defaults write com.apple.dock persistent-apps -array-add $dockDataPre$(echo "/Applications/Slack.app")$dockDataPro
 
 #Dash
-# defaults write com.apple.dock persistent-apps -array-add $dockDataPre$(echo "/Applications/Dash.app")$dockDataPro
+defaults write com.apple.dock persistent-apps -array-add $dockDataPre$(echo "/Applications/Dash.app")$dockDataPro
 
 #gitkraken
 defaults write com.apple.dock persistent-apps -array-add $dockDataPre$(readlink ~/Applications/GitKraken.app)$dockDataPro
 
+#Xcode
+defaults write com.apple.dock persistent-apps -array-add $dockDataPre$(echo "/Applications/Xcode.app")$dockDataPro
 
-# #Chrome
-# defaults write com.apple.dock persistent-apps -array-add $dockDataPre$(echo "'Google cheom'")$dockDataPro
+
 #
 # #Nylas N1
 # # defaults write com.apple.dock persistent-apps -array-add $dockDataPre$(readlink ~/Applications/Nylas N1.app)$dockDataPro
