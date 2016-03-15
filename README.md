@@ -1,4 +1,5 @@
-# ~/.
+![dotfiles](https://dotfiles.github.io/images/dotfiles-logo.png)
+
 These are the dotfiles I am using on Mac OS X, though, theoretically speaking,
 these should also work on any Linux or Unix machine.
 
