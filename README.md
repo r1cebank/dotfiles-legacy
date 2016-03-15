@@ -34,3 +34,5 @@ npm prefix will be changed to `~/.npm`
 ## License
 
 MIT
+
+[Logo](http://github.com/jglovier/dotfiles-logo/) by [Joel Glovier](https://github.com/jglovier).
