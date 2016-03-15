@@ -51,6 +51,7 @@ then
   brew cask install textexpander
   brew cask install sketch
   brew cask install macdown
+  brew cask install kaleidoscope
 
   # Font management
   brew tap caskroom/fonts
