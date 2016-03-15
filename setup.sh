@@ -32,11 +32,14 @@ fi
 # Setup the envar for dotfiles dir
 export ZSH=$HOME/.dotfiles
 
+# create the install lock
 touch $ZSH/install.lock
 
 # Setup the dotfiles
 $ZSH/script/bootstrap
 $ZSH/script/install
 
+# remove the install lock
 rm $ZSH/install.lock
-touch $ZSH/installed.lock
+# create the installed file
+touch $ZSH/installed

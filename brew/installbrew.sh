@@ -18,6 +18,4 @@ if ! type "brew" > /dev/null; then
 
 fi
 
-exec $ZSH/osx/brew.sh
-
-exit 0
+$ZSH/osx/brew.sh

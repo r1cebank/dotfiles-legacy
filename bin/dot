@@ -30,7 +30,7 @@ fi
 
 # if first time installing, will not update npm
 
-if [ ! -f $ZSH/installed.lock ]; then
+if [ ! -f $ZSH/installed ]; then
     echo "Updating npm"
     # Update npm
     npm update -g npm
