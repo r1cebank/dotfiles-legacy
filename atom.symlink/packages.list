@@ -9,3 +9,5 @@ language-bison
 merge-conflicts
 linter-eslint
 auto-indent
+advanced-open-file
+script

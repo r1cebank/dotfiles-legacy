@@ -60,4 +60,9 @@ then
   brew cask install font-roboto
   brew cask install font-roboto-slab
 
+  # Install Dart
+  brew tap dart-lang/dart
+  brew install dart --with-content-shell --with-dartium
+  brew linkapps dart
+
 fi

@@ -26,6 +26,16 @@
     onlyConfig: true
     verbose: true
   "project-manager": {}
+  "fuzzy-finder":
+    ignoredNames: [
+      ".git"
+      "._*"
+    ]
+    preserveLastSearch: true
+    searchAllPanes: true
+    useAlternateScoring: false
+  "merge-conflicts":
+    gitPath: "/usr/local/bin/git"
   "tree-view":
     hideIgnoredNames: true
   "linter-eslint":
