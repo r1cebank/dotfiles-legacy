@@ -1,3 +1,17 @@
+
+"global":
+ "core":
+    "excludeVcsIgnoredPaths": false
+    "ignoredNames": [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "Thumbs.db"
+      ".codekit-cache"
+      "bower_components"
+      "node_modules"
+    ]
 "*":
   linter: {}
   "exception-reporting":
