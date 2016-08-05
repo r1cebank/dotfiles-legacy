@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# dot
+#
+# Updates dotfiles by pulling from the github.
+
+export ZSH=$HOME/.dotfiles
+
+# Pull changes
+( cd $ZSH; git pull; )
+
+if [ "$PLATFORM" = "darwin" ]; then
+
+  # Setup OSX defaults
+  $ZSH/osx/set-defaults.sh
+
+  # Upgrade brew
+  brew update
+
+  # Install brew packages
+  $ZSH/brew/installbrew.sh
+
+  # Install app store apps
+  $ZSH/mas/appstore.sh
+
+  # Install iTerm2 color profile
+  open $ZSH/iTerm/Solarized_Dark.itermcolors
+
+fi
+
+# if first time installing, will not update npm
+
+if [ ! -f $ZSH/installed ]; then
+    echo "Updating npm"
+    # Update npm
+    npm update -g npm
+
+    # Update global npm packages
+    npm upgrade -g
+else
+    echo "First time installing, will not update"
+fi

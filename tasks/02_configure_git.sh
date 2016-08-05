@@ -5,11 +5,11 @@ function configure_git_init() {
 }
 
 function configure_git_run() {
+    PLATFORM=$(settings_get "PLATFORM")
     if ! [ -f git/gitconfig.symlink ]
     then
         git_credential='cache'
-        if [ "$(uname -s)" == "Darwin" ]
-        then
+        if [ "$PLATFORM" = "debian" ]; then
             git_credential='osxkeychain'
         fi
 

@@ -1,0 +1,4 @@
+
+# JS Snippets
+'.source.js':
+  '!banner': '/**\n * @author  Siyuan Gao <${1:"siyuangao@gmail.com"}>\n * @license MIT\n */'

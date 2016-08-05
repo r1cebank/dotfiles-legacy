@@ -1,0 +1,11 @@
+gulp-cli
+mocha
+nodemon
+node-inspector
+webpack
+bunyan
+renamer
+eslint
+eslint-config-airbnb
+react-native-cli
+rnpm
