@@ -25,18 +25,18 @@
 DOTFILES_ROOT=$(pwd)
 
 function welcome() {
-    echo -e "\e[00;32mWelcome to the new and shiny installer framework!\e[00m"
+    echo -e "Welcome to r1cebank's dotfile installer"
 }
 
 function installation_complete() {
-    echo -e "\e[00;32mMove along now, there's nothing else you can do!\e[00m"
+    echo -e "Installation complete, enjoy!"
 
     # If you want the install script to terminate automatically:
-    #exit 0
+    exit 0
 }
 
 function installation_incomplete() {
-    echo -e "\e[00;31mWhoopsie!\e[00m"
+    echo -e "Installation incomplete, please check install log for any errors"
 }
 
 

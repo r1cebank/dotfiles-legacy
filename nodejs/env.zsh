@@ -1,5 +1,5 @@
 # Setup PATH to include npm global modules and local npm executables
-export PATH="./node_modules/.bin:$HOME/.npm/bin:$PATH"
+export PATH="$HOME/.npm/bin:./node_modules/.bin:$PATH"
 
 # Setup NODE_PATH to be able to require globally installed modules
 export NODE_PATH="$HOME/.npm/lib/node_modules"
