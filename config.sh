@@ -22,7 +22,7 @@
 # Overwrite default log-to-stdout config.
 #LOG_STDOUT=( "ERROR" "IMPORTANT" "WARNING" "INFO" "SKIP" "START" "FINISH" )
 
-DOTFILES_ROOT=$(pwd)
+DOTFILES_ROOT=$(cd "$(dirname "$0")"; pwd)
 
 function welcome() {
     echo -e "Welcome to r1cebank's dotfile installer"
