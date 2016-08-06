@@ -30,6 +30,7 @@ function set_default_run() {
         # Display crash dialogs as notifications
         defaults write com.apple.CrashReporter UseUNC 1
 
+        chsh -s /usr/local/bin/zsh
     fi
     return ${E_SUCCESS}
 }
