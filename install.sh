@@ -11,4 +11,4 @@ else
     git clone https://github.com/r1cebank/dotfiles ~/.dotfiles
 fi
 
-./$HOME/.dotfiles/installer;
+$HOME/.dotfiles/installer;
