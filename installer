@@ -76,9 +76,6 @@ fi
 if ! type "awk" > /dev/null; then
     echo "Please install 'awk'."; exit 1;
 fi
-if ! type "wget" > /dev/null; then
-    echo "Please install 'wget'."; exit 1;
-fi
 ############################## Initial-touch-all ##############################
 
 # Update all timestamps to avoid any 'file comes from the future' errors.
