@@ -1,8 +1,7 @@
-
-"global":
- "core":
-    "excludeVcsIgnoredPaths": false
-    "ignoredNames": [
+"*":
+  core:
+    excludeVcsIgnoredPaths: false
+    ignoredNames: [
       ".git"
       ".hg"
       ".svn"
@@ -12,57 +11,11 @@
       "bower_components"
       "node_modules"
     ]
-"*":
-  linter: {}
-  "exception-reporting":
-    userId: "12c241e4-ad21-7c4e-ed25-26182f8e4d7f"
-  welcome:
-    showOnStartup: false
-  core:
-    disabledPackages: [
-      "linter-javac"
-    ]
-    openEmptyEditorOnStart: false
+    telemetryConsent: "limited"
   editor:
-    invisibles: {}
-    scrollPastEnd: true
     fontFamily: "Monaco"
-    fontSize: 13
     tabLength: 4
-  "atom-beautify":
-    _analyticsUserId: "2c589e06-3a07-4042-87c8-12fe7233212a"
-  "tool-bar":
-    iconSize: "32px"
-    visible: false
-  "linter-jshint": {}
-  "linter-jscs":
-    harmony: true
-    onlyConfig: true
-    verbose: true
-  "project-manager": {}
-  "fuzzy-finder":
-    ignoredNames: [
-      ".git"
-      "._*"
-    ]
-    preserveLastSearch: true
-    searchAllPanes: true
-    useAlternateScoring: false
-  "merge-conflicts":
-    gitPath: "/usr/local/bin/git"
-  "tree-view":
-    hideIgnoredNames: true
+  "exception-reporting":
+    userId: "11398ad0-4f5e-79cf-c185-1f706face300"
   "linter-eslint":
     globalNodePath: "~/.npm/lib/node_modules"
-  "language-babel": {}
-  "atom-typescript": {}
-  dash:
-    grammars:
-      JavaScript: [
-        "nodejs"
-      ]
-    filenames:
-      "gulpfile.js": [
-        "gulp"
-      ]
-  docblockr: {}
