@@ -12,6 +12,10 @@
       "node_modules"
     ]
     telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "ariake-dark-syntax"
+    ]
   editor:
     fontFamily: "Monaco"
     tabLength: 4
