@@ -14,13 +14,13 @@ function install_tools_run() {
 
         # Install GNU core
         brew tap homebrew/dupes
-        brew install coreutils --with-default-names
-        brew install findutils --with-default-names
-        brew install gnu-indent --with-default-names
-        brew install gnu-sed --with-default-names
-        brew install gnutls --with-default-names
-        brew install grep --with-default-names
-        brew install gnu-tar --with-default-names
+        brew install coreutils
+        brew install findutils
+        brew install gnu-indent
+        brew install gnu-sed
+        brew install gnutls
+        brew install grep
+        brew install gnu-tar
         brew install gawk
 
         # Install other CLI utilities
