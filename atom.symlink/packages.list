@@ -8,4 +8,7 @@ merge-conflicts
 linter-eslint
 auto-indent
 advanced-open-file
-script
+minimap
+minimap-highlight-selected
+node-debugger
+goto-definition
