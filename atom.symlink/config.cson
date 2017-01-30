@@ -1,6 +1,8 @@
 "*":
   core:
-    excludeVcsIgnoredPaths: false
+    disabledPackages: [
+      "node-debugger"
+    ]
     ignoredNames: [
       ".git"
       ".hg"
@@ -21,5 +23,19 @@
     tabLength: 4
   "exception-reporting":
     userId: "11398ad0-4f5e-79cf-c185-1f706face300"
+  linter:
+    showErrorPanel: false
   "linter-eslint":
     globalNodePath: "~/.npm/lib/node_modules"
+  minimap:
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
+  welcome:
+    showOnStartup: false
