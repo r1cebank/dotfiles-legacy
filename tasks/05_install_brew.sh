@@ -14,7 +14,7 @@ function install_brew_run() {
         if [ "$PLATFORM" = "darwin" ]; then
             ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         else
-            ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
+            log_info "Linux systems does not require install of homebrew"
         fi
     else
         log_info "Brew is already installed on your system, running update now"
