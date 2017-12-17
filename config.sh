@@ -39,26 +39,6 @@ function installation_incomplete() {
     echo -e "Installation incomplete, please check install log for any errors"
 }
 
-
-info () {
-    printf "  [ \033[00;34m..\033[0m ] $1"
-}
-
-user () {
-    printf "\r  [ \033[0;33m?\033[0m ] $1 "
-}
-
-success () {
-    printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
-}
-
-fail () {
-    printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
-    echo ''
-    exit
-}
-
-
 function link_file () {
     local src=$1 dst=$2
 
