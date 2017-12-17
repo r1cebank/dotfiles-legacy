@@ -10,10 +10,10 @@ function check_system_run() {
     # Mainly to differentiate between OS X, Ubuntu and CentOS
     PLATFORM=$(uname | tr "[:upper:]" "[:lower:]")
     if [ "$PLATFORM" = "linux" ]; then
-      if type "yum" > /dev/null; then
+      if hash yum >/dev/null 2>&1; then
         PLATFORM="centos"
       fi
-      if type "apt-get" > /dev/null; then
+      if hash apt-get >/dev/null 2>&1; then
         PLATFORM="debian"
       fi
     fi

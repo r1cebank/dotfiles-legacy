@@ -7,7 +7,7 @@ function configure_kryptonite_init() {
 function configure_kryptonite_run() {
     PLATFORM=$(settings_get "PLATFORM")
     # Check for Homebrew
-    if ! type "kr" > /dev/null; then
+    if ! hash kr >/dev/null 2>&1; then
         log_info "Installing Kryptonite for you."
 
         # Install the correct homebrew for each OS type

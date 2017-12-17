@@ -4,7 +4,7 @@ function install_dependencies_init() {
     task_setup "install_dependencies" "Install dependencies" "Install system packages" "check_system"
 }
 
-function bootstrap_run() {
+function install_dependencies_run() {
     PLATFORM=$(settings_get "PLATFORM")
     log_info "You are running: $PLATFORM"
     # Install gcc, git and zsh if this is Linux
