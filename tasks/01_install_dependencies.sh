@@ -13,7 +13,7 @@ function install_dependencies_run() {
         sudo apt-get install -y build-essential git zsh curl file python-setuptools
     elif [ "$PLATFORM" = "centos" ]; then
         yum check-update
-        sudo yum install gcc gcc-c++ make openssl-devel git curl file python-setuptools
+        sudo yum install -y gcc gcc-c++ make openssl-devel git curl file python-setuptools
     elif [ "$PLATFORM" = "darwin" ]; then
         log_info "macOS have existing dependencies we can work with"
     fi
