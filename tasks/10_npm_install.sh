@@ -5,6 +5,8 @@ function npm_install_init() {
 }
 
 function npm_install_run() {
+    # Reload nodejs environment variables
+    source $HOME/.dotfiles/nodejs/env.zsh
     # Install frequently used Node.js packages
     npm install --global $(tr '\n' ' ' < $DOTFILES_ROOT/nodejs/packages.list)
     return ${E_SUCCESS}

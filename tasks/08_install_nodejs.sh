@@ -14,7 +14,7 @@ function install_nodejs_run() {
         curl -L http://git.io/n-install | bash -s -- -n -y lts
 
         # Reload nodejs environment variables
-        export PATH="$HOME/.npm/bin:./node_modules/.bin:$PATH"
+        source $HOME/.dotfiles/nodejs/env.zsh
 
         # Install the last node lts
         n lts
