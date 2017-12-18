@@ -1,4 +1,5 @@
-mocha
-webpack
+yarn
+ava
 eslint
+npm-check
 react-native-cli
