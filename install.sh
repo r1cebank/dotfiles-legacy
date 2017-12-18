@@ -4,10 +4,20 @@
 
 #
 # Clone/pull the r1cebank/dotfiles
-if [[ -d $HOME/.dotfiles ]]
-then
+PLATFORM=$(uname | tr "[:upper:]" "[:lower:]")
+if [[ -d $HOME/.dotfiles ]]; then
     ( cd $HOME/.dotfiles; git pull; )
 else
+    if [ "$PLATFORM" = "linux" ]; then
+        if hash yum >/dev/null 2>&1; then
+            yum check-update
+            sudo yum install -y git
+        fi
+        if hash apt-get >/dev/null 2>&1; then
+            sudo apt update
+            sudo apt install -y git
+        fi
+    fi
     git clone https://github.com/r1cebank/dotfiles ~/.dotfiles
 fi
 
