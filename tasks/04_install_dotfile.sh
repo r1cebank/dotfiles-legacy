@@ -12,5 +12,11 @@ function install_dotfile_run() {
         dst="$HOME/.$(basename "${src%.*}")"
         link_file "$src" "$dst"
     done
+
+    # custom linkage
+
+    # VS Code
+    link_file "$DOTFILES_ROOT/code/settings.json" "$HOME/.config/Code/User/settings.json"
+    link_file "$DOTFILES_ROOT/code/keybindings.json" "$HOME/.config/Code/User/keybindings.json"
     return ${E_SUCCESS}
 }
