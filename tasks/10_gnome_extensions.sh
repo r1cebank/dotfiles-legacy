@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-function gnome_estensions_init() {
-    task_setup "gnome_estensions" "Gnome Extensions" "Install gnome extensions" "install_tools"
+function gnome_extensions_init() {
+    task_setup "gnome_extensions" "Gnome Extensions" "Install gnome extensions" "install_tools"
 }
 
-function gnome_estensions_run() {
+function gnome_extensions_run() {
     # Check for code
     if hash gnome-shell >/dev/null 2>&1; then
         log_info "Installing gnome extensions."
