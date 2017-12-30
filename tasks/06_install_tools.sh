@@ -27,7 +27,6 @@ function install_tools_run() {
         brew install git
         brew install direnv
         brew install wget
-        brew install argon/mas/mas
 
         # Install OS X applications
         brew cask install dropbox
