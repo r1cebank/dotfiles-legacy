@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-function install_dotfile_init() {
-    task_setup "install_dotfile" "Install Dotfiles" "Install dotfiles"
+function link_dotfile_init() {
+    task_setup "link_dotfile" "Link Dotfiles" "Link dotfiles"
 }
 
-function install_dotfile_run() {
+function link_dotfile_run() {
     local overwrite_all=false backup_all=false skip_all=false
 
     for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink')
