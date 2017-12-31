@@ -53,7 +53,7 @@ function install_tools_run() {
     elif [ "$PLATFORM" = "debian" ]; then
         # Adding chrome
         wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-        sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list'
+        sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
         sudo apt-get update
         sudo apt-get install -y google-chrome-stable
         sudo apt-get install -f -y
@@ -96,9 +96,7 @@ function install_tools_run() {
         sudo chmod +x /usr/local/bin/docker-compose
 
         # install arc theme
-        wget -nv https://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key -O Release.key
-        sudo apt-key add - < Release.key
-        sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' > /etc/apt/sources.list.d/arc-theme.list"
+        sudo add-apt-repository ppa:fossfreedom/arc-gtk-theme-daily
         sudo apt-get update
         sudo apt-get install -y arc-theme
 
