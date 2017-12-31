@@ -33,7 +33,7 @@ function set_default_run() {
         log_info "setting gnome shell favorite"
         gsettings set org.gnome.shell favorite-apps "['telegramdesktop.desktop', 'google-chrome.desktop', 'code.desktop', 'jetbrains-studio.desktop', 'slack.desktop', 'steam.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"
         gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
-        gsettings get org.gnome.shell.extensions.user-theme name 'Arc-Dark'
+        gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
         gsettings set org.gnome.desktop.interface icon-theme 'Arc'
         gsettings set org.gnome.shell enabled-extensions "['caffeine@patapon.info', 'clipboard-indicator@tudmotu.com', 'emoji-selector@maestroschan.fr', 'gnome-shell-screenshot@ttll.de', 'openweather-extension@jenslody.de', 'show-desktop-button@amivaleo', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'status-area-horizontal-spacing@mathematical.coffee.gmail.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'topIcons@adel.gadllah@gmail.com']
 "
