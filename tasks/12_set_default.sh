@@ -31,7 +31,7 @@ function set_default_run() {
         defaults write com.apple.CrashReporter UseUNC 1
     elif [ "$PLATFORM" = "debian" ]; then
         log_info "setting gnome shell favorite"
-        gsettings set org.gnome.shell favorite-apps "['telegramdesktop.desktop', 'google-chrome.desktop', 'code.desktop', 'jetbrains-studio.desktop', 'slack.desktop', 'steam.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"
+        gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'code.desktop', 'slack.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"
         gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
         gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
         gsettings set org.gnome.desktop.interface icon-theme 'Arc'

@@ -5,7 +5,8 @@ function gnome_extensions_init() {
 }
 
 function gnome_extensions_run() {
-    # Check for code
+    # Check for gnome
+    mkdir -p $HOME/.local/share/gnome-shell/extensions
     if hash gnome-shell >/dev/null 2>&1; then
         log_info "Installing gnome extensions."
         while read in; do $DOTFILES_ROOT/bin/gnome-ext-install install "$in"; done < $DOTFILES_ROOT/gnome/extensions.list

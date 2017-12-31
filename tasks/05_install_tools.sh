@@ -65,14 +65,6 @@ function install_tools_run() {
         sudo apt-get update
         sudo apt-get install -y code
 
-        # intall steam
-        sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F24AEA9FB05498B7
-        REPO="deb http://repo.steampowered.com/steam/ $(lsb_release -cs) steam"
-        echo "${REPO}" > /tmp/steam.list
-        sudo mv /tmp/steam.list /etc/apt/sources.list.d/ && \
-        sudo apt-get update
-        sudo apt-get install -y steam
-
         # install telegram
         sudo add-apt-repository ppa:atareao/telegram
         sudo apt-get update
