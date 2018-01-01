@@ -98,5 +98,3 @@ for arg in "$@"; do
         exit 1
     fi
 done
-
-gnome-shell --replace &>/dev/null & disown
