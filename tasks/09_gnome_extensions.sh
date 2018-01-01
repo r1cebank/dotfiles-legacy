@@ -13,5 +13,6 @@ function gnome_extensions_run() {
     else
         log_info "Did not find gnome, skipping gnome extensions."
     fi
+    gnome-shell --replace &>/dev/null & disown
     return ${E_SUCCESS}
 }
