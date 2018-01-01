@@ -7,7 +7,7 @@ function install_brew_init() {
 function install_brew_run() {
     PLATFORM=$(settings_get "PLATFORM")
     # Check for Homebrew
-    if ! hash brew >/dev/null 2>&1; thensss
+    if ! hash brew >/dev/null 2>&1; then
         log_info "Installing Homebrew for you."
 
         # Install the correct homebrew for each OS type
