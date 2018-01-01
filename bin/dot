@@ -10,22 +10,8 @@ export ZSH=$HOME/.dotfiles
 ( cd $ZSH; git pull; )
 
 if [ "$PLATFORM" = "darwin" ]; then
-
-  # Setup OSX defaults
-  $ZSH/osx/set-defaults.sh
-
-  # Upgrade brew
-  brew update
-
-  # Install brew packages
-  $ZSH/brew/installbrew.sh
-
-  # Install app store apps
-  $ZSH/mas/appstore.sh
-
-  # Install iTerm2 color profile
-  open $ZSH/iTerm/Solarized_Dark.itermcolors
-
+else
+    dconf load /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ < $DOTFILES_ROOT/gnome/profile.dconf
 fi
 
 # if first time installing, will not update npm
