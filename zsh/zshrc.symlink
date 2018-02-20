@@ -58,10 +58,11 @@ source $ZSH/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 autoload -U compinit
 compinit
 
+fpath=($fpath "$ZSH/zsh/theme")
+autoload -U promptinit; promptinit
+prompt spaceship
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-fpath=($fpath "$ZSH/zsh/theme")
-autoload -U promptinit; promptinit
-prompt spaceship
