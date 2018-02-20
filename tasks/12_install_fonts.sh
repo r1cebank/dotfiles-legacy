@@ -12,6 +12,8 @@ function install_fonts_run() {
         mkdir -p $HOME/.fonts
         local overwrite_all=false backup_all=false skip_all=false
 
+        sudo apt-get install fonts-powerline
+
         for src in $(find -H "$DOTFILES_ROOT/fonts" -maxdepth 2 -name '*.symlink')
         do
             dst="$HOME/.fonts/$(basename "${src%.*}")"
