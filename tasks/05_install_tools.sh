@@ -51,6 +51,11 @@ function install_tools_run() {
         brew cask install font-roboto
         brew cask install font-roboto-slab
     elif [ "$PLATFORM" = "debian" ]; then
+        # Adding hyper
+        curl -L https://releases.hyper.is/download/deb > hyper.deb
+        sudo dpkg -i hyper.deb
+        rm hyper.deb
+
         # Adding chrome
         wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
         sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
