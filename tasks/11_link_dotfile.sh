@@ -18,5 +18,8 @@ function link_dotfile_run() {
     # VS Code
     link_file "$DOTFILES_ROOT/code/settings.json" "$HOME/.config/Code/User/settings.json"
     link_file "$DOTFILES_ROOT/code/keybindings.json" "$HOME/.config/Code/User/keybindings.json"
+
+    # Hyper
+    link_file "$DOTFILES_ROOT/hyper/hyper.js" "$HOME/.hyper.js"
     return ${E_SUCCESS}
 }
