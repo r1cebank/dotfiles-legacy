@@ -39,14 +39,10 @@ do
 done
 
 # load everything but the path and completion files
-for file in ${${${${config_files:#*/path.zsh}:#*/completion.zsh}:#*/highlighters/*.zsh}:#*/theme/**/*.zsh}
+for file in ${${${${${config_files:#*/path.zsh}:#*/completion.zsh}:#*/highlighters/*.zsh}:#*/theme/**/*.zsh}:#*/theme/*.zsh}
 do
   source $file
 done
-
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
@@ -57,4 +53,15 @@ done
 unset config_files
 
 source $ZSH/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZSH/zsh/theme/spaceship.zsh
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+fpath=($fpath "$ZSH/zsh/theme")
+autoload -U promptinit; promptinit
+prompt spaceship
