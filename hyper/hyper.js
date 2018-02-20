@@ -17,7 +17,7 @@ module.exports = {
     cursorShape: 'UNDERLINE',
 
     // set to true for blinking cursor
-    cursorBlink: false,
+    cursorBlink: true,
 
     // color of the text
     foregroundColor: '#fff',
@@ -107,7 +107,6 @@ module.exports = {
   plugins: [
       'hyperminimal',
       'hyper-dark-scrollbar',
-      'hyper-blink',
       'hyper-one-dark-vivid'
   ],
 
