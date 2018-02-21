@@ -5,9 +5,5 @@ function configure_npmrc_init() {
 }
 
 function configure_npmrc_run() {
-    if ! [ -f $DOTFILES_ROOT/nodejs/npmrc.symlink ]
-    then
-        cp $DOTFILES_ROOT/nodejs/npmrc.symlink.example $DOTFILES_ROOT/nodejs/npmrc.symlink
-    fi
     return ${E_SUCCESS}
 }

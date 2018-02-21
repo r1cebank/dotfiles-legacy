@@ -16,9 +16,10 @@ function configure_kryptonite_run() {
         else
             curl https://krypt.co/kr | sh
         fi
+        kr pair
     else
         log_info "Kryptonite is already installed"
+        kr pair
     fi
-    kr pair
     return ${E_SUCCESS}
 }
