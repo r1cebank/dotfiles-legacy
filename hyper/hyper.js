@@ -3,9 +3,13 @@
 // See https://hyper.is#cfg for all currently supported options.
 
 module.exports = {
+  keymaps: {
+    "pane:close": "ctrl+w",
+    "tab:new": "ctrl+t"
+  },
   config: {
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 15,
 
     // font family with optional fallbacks
     fontFamily: 'Hack, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
