@@ -109,7 +109,6 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-      'hyperminimal',
       'hyper-dark-scrollbar',
       'hyper-one-dark-vivid'
   ],

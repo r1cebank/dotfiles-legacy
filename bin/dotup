@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# dot
+# dotup
 #
 # Updates dotfiles by pulling from the github.
 
