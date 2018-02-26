@@ -16,6 +16,9 @@ function check_system_run() {
       if hash apt-get >/dev/null 2>&1; then
         PLATFORM="debian"
       fi
+      if hash pacman >/dev/null 2>&1; then
+        PLATFORM="arch"
+      fi
     fi
     settings_set "PLATFORM" $PLATFORM
     return ${E_SUCCESS}
