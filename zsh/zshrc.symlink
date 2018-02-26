@@ -62,7 +62,7 @@ fpath=($fpath "$ZSH/zsh/theme")
 autoload -U promptinit; promptinit
 prompt spaceship
 
-eval $(thefuck --alias)
+eval $(thefuck --alias shit)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
