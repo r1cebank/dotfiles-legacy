@@ -10,17 +10,18 @@ export ZSH=$HOME/.dotfiles
 ( cd $ZSH; git pull; )
 
 if [ "$PLATFORM" = "darwin" ]; then
+    echo "updating for macos"
+elif [ "$PLATFORM" = "debian" ]; then
+    echo 'updating for debian based system'
+elif [ "$PLATFORM" = "arch" ]; then
+    echo 'updating for arch based system'
 else
-    dconf load /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ < $DOTFILES_ROOT/gnome/profile.dconf
+    echo 'skipping update'
 fi
 
 # if first time installing, will not update npm
 
 if [ ! -f $ZSH/installed ]; then
-    echo "Updating npm"
-    # Update npm
-    npm update -g npm
-
     # Update global npm packages
     npm upgrade -g
 else
