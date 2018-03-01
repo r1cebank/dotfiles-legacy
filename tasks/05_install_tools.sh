@@ -58,7 +58,7 @@ function install_tools_run() {
 
         # Adding chrome
         wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-        sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
+        sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
         sudo apt-get update
         sudo apt-get install -y google-chrome-stable
         sudo apt-get install -f -y
@@ -101,6 +101,12 @@ function install_tools_run() {
         git clone https://github.com/horst3180/arc-icon-theme --depth 1 && cd arc-icon-theme
         ./autogen.sh --prefix=/usr
         sudo make install
+
+        # install android studio
+        sudo apt-add-repository ppa:maarten-fonville/android-studio
+        sudo apt-get update
+        sudo apt-get install android-studio
+        /opt/android-studio/bin/studio.sh
 
     elif [ "$PLATFORM" = "centos" ]; then
         # Ading vscode

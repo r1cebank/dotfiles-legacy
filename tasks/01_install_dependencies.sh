@@ -10,7 +10,7 @@ function install_dependencies_run() {
     # Install gcc, git and zsh if this is Linux
     if [ "$PLATFORM" = "debian" ]; then
         sudo apt-get update
-        sudo apt-get install -y build-essential wget git zsh curl file python-setuptools autoconf automake pkg-config libgtk-3-dev apt-transport-https ca-certificates software-properties-common
+        sudo apt-get install -y snapd build-essential wget git zsh curl file python-setuptools autoconf automake pkg-config libgtk-3-dev apt-transport-https ca-certificates software-properties-common
     elif [ "$PLATFORM" = "centos" ]; then
         yum check-update
         sudo yum install -y gcc gcc-c++ make openssl-devel wget git curl file python-setuptools autoconf automake pkgconfig
