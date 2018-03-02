@@ -105,7 +105,7 @@ function install_tools_run() {
         # install android studio
         sudo apt-add-repository ppa:maarten-fonville/android-studio
         sudo apt-get update
-        sudo apt-get install android-studio
+        sudo apt-get install -y android-studio
         /opt/android-studio/bin/studio.sh
 
     elif [ "$PLATFORM" = "centos" ]; then
