@@ -75,7 +75,7 @@ function install_tools_run() {
         sudo apt-get install -y code
 
         # install telegram
-        sudo add-apt-repository ppa:atareao/telegram
+        sudo apt-add-repository ppa:atareao/telegram -y
         sudo apt-get update
         sudo apt-get install -y telegram
 
@@ -97,7 +97,7 @@ function install_tools_run() {
         sudo chmod +x /usr/local/bin/docker-compose
 
         # install arc theme
-        sudo add-apt-repository ppa:fossfreedom/arc-gtk-theme-daily
+        sudo apt-add-repository ppa:fossfreedom/arc-gtk-theme-daily -y
         sudo apt-get update
         sudo apt-get install -y arc-theme
 
@@ -107,7 +107,7 @@ function install_tools_run() {
         sudo make install
 
         # install android studio
-        sudo apt-add-repository ppa:maarten-fonville/android-studio
+        sudo apt-add-repository ppa:maarten-fonville/android-studio -y
         sudo apt-get update
         sudo apt-get install -y android-studio
         /opt/android-studio/bin/studio.sh &
