@@ -106,7 +106,7 @@ function install_tools_run() {
         sudo apt-add-repository ppa:maarten-fonville/android-studio
         sudo apt-get update
         sudo apt-get install -y android-studio
-        /opt/android-studio/bin/studio.sh
+        /opt/android-studio/bin/studio.sh &
 
     elif [ "$PLATFORM" = "centos" ]; then
         # Ading vscode
