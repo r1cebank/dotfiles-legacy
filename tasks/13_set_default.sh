@@ -37,8 +37,6 @@ function set_default_run() {
             gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
             gsettings set org.gnome.desktop.interface icon-theme 'Arc'
             gsettings set org.gnome.shell enabled-extensions "['caffeine@patapon.info', 'clipboard-indicator@tudmotu.com', 'emoji-selector@maestroschan.fr', 'gnome-shell-screenshot@ttll.de', 'openweather-extension@jenslody.de', 'show-desktop-button@amivaleo', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'status-area-horizontal-spacing@mathematical.coffee.gmail.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'topIcons@adel.gadllah@gmail.com']"
-            dconf load /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ < $DOTFILES_ROOT/gnome/profile.dconf
-            dconf write /org/gnome/terminal/legacy/profiles:/default "b1dcc9dd-5262-4d8d-a863-c897e6d979b9"
         fi
     fi
     # Changing default shell
