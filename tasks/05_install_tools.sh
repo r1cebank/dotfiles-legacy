@@ -51,11 +51,6 @@ function install_tools_run() {
         brew cask install font-roboto
         brew cask install font-roboto-slab
     elif [ "$PLATFORM" = "debian" ]; then
-        # Adding hyper
-        curl -L https://releases.hyper.is/download/deb > hyper.deb
-        sudo dpkg -i hyper.deb
-        rm hyper.deb
-
         # Instal flutter
         git clone -b beta https://github.com/flutter/flutter.git
 
@@ -116,6 +111,11 @@ function install_tools_run() {
         sudo apt-get update
         sudo apt-get install -y android-studio
         /opt/android-studio/bin/studio.sh &
+        
+        # Adding hyper
+        curl -L https://releases.hyper.is/download/deb > hyper.deb
+        sudo dpkg -i hyper.deb
+        rm hyper.deb
 
     elif [ "$PLATFORM" = "centos" ]; then
         # Ading vscode
