@@ -19,7 +19,7 @@ function install_dependencies_run() {
         sudo zypper in -y gcc gcc-c++ make openssl-devel wget git curl file python-setuptools autoconf automake pkgconfig python3 python3-devel
         sudo pip install thefuck
     elif [ "$PLATFORM" = "arch" ]; then
-        sudo pacman -S thefuck
+        sudo pacman -S --noconfirm --needed base-devel thefuck python3 wget zsh curl
     elif [ "$PLATFORM" = "darwin" ]; then
         log_info "macOS have existing dependencies we can work with"
     fi

@@ -106,7 +106,8 @@ function install_tools_run() {
         curl -L https://releases.hyper.is/download/deb > hyper.deb
         sudo dpkg -i hyper.deb
         rm hyper.deb
-
+    elif [ "$PLATFORM" = "arch" ]; then
+        echo "Nothing for arch yet"
     elif [ "$PLATFORM" = "centos" ]; then
         # Ading vscode
         sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
