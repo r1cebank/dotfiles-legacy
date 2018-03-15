@@ -110,7 +110,8 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
       'hyper-dark-scrollbar',
-      'hyper-one-dark-vivid'
+      'hyper-one-dark-vivid',
+      'hyperborder'
   ],
 
   // in development, you can create a directory under
