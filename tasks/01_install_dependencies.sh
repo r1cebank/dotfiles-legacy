@@ -11,7 +11,7 @@ function install_dependencies_run() {
     if [ "$PLATFORM" = "debian" ]; then
         sudo apt-get update
         sudo apt-get install -y vim python3-dev python3-pip build-essential lib32stdc++6 \
-            wget git zsh curl file python-setuptools autoconf automake pkg-config \
+            wget git zsh curl direnv file python-setuptools autoconf automake pkg-config \
             libgtk-3-dev apt-transport-https ca-certificates software-properties-common \
             gnupg2 gnupg-agent pinentry-curses scdaemon pcscd yubikey-personalization libusb-1.0-0-dev
         sudo pip3 install thefuck
