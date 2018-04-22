@@ -150,6 +150,8 @@ function install_tools_run() {
         yaourt -S hyper --noconfirm
         # installing android studio
         yaourt -S android-studio --noconfirm
+        # installing tilix
+        yaourt -S tilix --noconfirm
     elif [ "$PLATFORM" = "centos" ]; then
         # Ading vscode
         sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
