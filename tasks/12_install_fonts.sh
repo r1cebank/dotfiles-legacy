@@ -20,6 +20,8 @@ function install_fonts_run() {
             link_file "$src" "$dst"
         done
         fc-cache -f -v
+    elif [ "$PLATFORM" = "arch" ]; then
+        yaourt -S ttf-hack --noconfirm
     fi
     return ${E_SUCCESS}
 }

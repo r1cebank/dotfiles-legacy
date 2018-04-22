@@ -13,13 +13,13 @@ function install_tools_run() {
 
         # Install GNU core
         brew tap homebrew/dupes
-        brew install coreutils
-        brew install findutils
-        brew install gnu-indent
-        brew install gnu-sed
+        brew install coreutils --with-default-names
+        brew install findutils --with-default-names
+        brew install gnu-indent --with-default-names
+        brew install gnu-sed --with-default-names
         brew install gnutls
-        brew install grep
-        brew install gnu-tar
+        brew install grep --with-default-names
+        brew install gnu-tar --with-default-names
         brew install gawk
 
         # Install other CLI utilities
@@ -107,7 +107,49 @@ function install_tools_run() {
         sudo dpkg -i hyper.deb
         rm hyper.deb
     elif [ "$PLATFORM" = "arch" ]; then
-        echo "Nothing for arch yet"
+        # Instal flutter
+        git clone -b beta https://github.com/flutter/flutter.git
+
+        # Installing yaourt
+        git clone https://aur.archlinux.org/package-query.git
+        cd package-query
+        makepkg -si --noconfirm
+        cd ..
+        git clone https://aur.archlinux.org/yaourt.git
+        cd yaourt
+        makepkg -si --noconfirm
+        cd ..
+        rm -rf package-query
+        rm -rf yaourt
+
+        # Adding dart
+        yaourt -S dart --noconfirm
+        # Adding Chrome
+        yaourt -S google-chrome --noconfirm
+        # installing telegram
+        yaourt -S telegram-desktop-bin --noconfirm
+        # installing vscode
+        yaourt -S visual-studio-code-bin --noconfirm
+        # installing java
+        yaourt -S jdk8 --noconfirm
+        # installing docker
+        if lsmod | grep loop &> /dev/null; then
+            echo "loop is loaded!"
+        else
+            echo "loop is not loaded! Enabling it now"
+            sudo tee /etc/modules-load.d/loop.conf <<< "loop"
+            sudo modprobe loop
+        fi
+        yaourt -S docker --noconfirm
+        sudo systemctl start docker.service
+        sudo systemctl enable docker.service
+        sudo gpasswd -a $USER docker
+        # installing docker-compose
+        yaourt -S docker-compose --noconfirm
+        # installing hyper
+        yaourt -S hyper --noconfirm
+        # installing android studio
+        yaourt -S android-studio --noconfirm
     elif [ "$PLATFORM" = "centos" ]; then
         # Ading vscode
         sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
