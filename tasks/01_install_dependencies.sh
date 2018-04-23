@@ -20,6 +20,17 @@ function install_dependencies_run() {
         sudo pip install thefuck
     elif [ "$PLATFORM" = "arch" ]; then
         sudo pacman -S --noconfirm --needed base-devel thefuck python3 wget zsh curl
+        # Installing yaourt
+        git clone https://aur.archlinux.org/package-query.git
+        cd package-query
+        makepkg -si --noconfirm
+        cd ..
+        git clone https://aur.archlinux.org/yaourt.git
+        cd yaourt
+        makepkg -si --noconfirm
+        cd ..
+        rm -rf package-query
+        rm -rf yaourt
     elif [ "$PLATFORM" = "darwin" ]; then
         log_info "macOS have existing dependencies we can work with"
     fi

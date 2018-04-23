@@ -13,8 +13,10 @@ function configure_kryptonite_run() {
         # Install the correct homebrew for each OS type
         if [ "$PLATFORM" = "darwin" ]; then
             brew install kryptco/tap/kr
-        else
+        elif [ "$PLATFORM" = "debian" ]; then
             curl https://krypt.co/kr | sh
+        elif [ "$PLATFORM" = "arch" ]; then
+            yaourt -S kr --noconfirm
         fi
         kr pair
     else
