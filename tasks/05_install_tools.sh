@@ -101,7 +101,7 @@ function install_tools_run() {
         sudo apt-get update
         sudo apt-get install -y android-studio
         /opt/android-studio/bin/studio.sh &
-        
+
         # Adding hyper
         curl -L https://releases.hyper.is/download/deb > hyper.deb
         sudo dpkg -i hyper.deb
@@ -152,6 +152,10 @@ function install_tools_run() {
         yaourt -S android-studio --noconfirm
         # installing tilix
         yaourt -S tilix --noconfirm
+        # install virtualbox
+        yaourt -S virtualbox-bin --noconfirm
+        # install vagrant
+        yaourt -S vagrant --noconfirm
     elif [ "$PLATFORM" = "centos" ]; then
         # Ading vscode
         sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
