@@ -110,18 +110,6 @@ function install_tools_run() {
         # Instal flutter
         git clone -b beta https://github.com/flutter/flutter.git
 
-        # Installing yaourt
-        git clone https://aur.archlinux.org/package-query.git
-        cd package-query
-        makepkg -si --noconfirm
-        cd ..
-        git clone https://aur.archlinux.org/yaourt.git
-        cd yaourt
-        makepkg -si --noconfirm
-        cd ..
-        rm -rf package-query
-        rm -rf yaourt
-
         # Adding dart
         yaourt -S dart --noconfirm
         # Adding Chrome
@@ -156,6 +144,8 @@ function install_tools_run() {
         yaourt -S virtualbox-bin --noconfirm
         # install vagrant
         yaourt -S vagrant --noconfirm
+        # installing direnv
+        yaourt -S direnv --noconfirm
     elif [ "$PLATFORM" = "centos" ]; then
         # Ading vscode
         sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
