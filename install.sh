@@ -18,7 +18,7 @@ else
             sudo apt install -y git
         fi
         if hash pacman >/dev/null 2>&1; then
-            sudo pacman -S git
+            sudo pacman -S --noconfirm git
         fi
     fi
     git clone https://github.com/r1cebank/dotfiles ~/.dotfiles
