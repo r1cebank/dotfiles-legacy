@@ -146,6 +146,11 @@ function install_tools_run() {
         yaourt -S vagrant --noconfirm
         # installing direnv
         yaourt -S direnv --noconfirm
+        # installing adapta theme
+        yaourt -S adapta-gtk-theme --noconfirm
+        # installing papirus-icon-theme
+        yaourt -S papirus-icon-theme
+
     elif [ "$PLATFORM" = "centos" ]; then
         # Ading vscode
         sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
