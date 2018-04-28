@@ -6,6 +6,12 @@ function configure_git_init() {
 
 function configure_git_run() {
     PLATFORM=$(settings_get "PLATFORM")
+    # Setup gpg keys
+    gpg --recv BA24F9FB4C2A40662B45168F756EE098A34413C4
+    gpg --edit-key BA24F9FB4C2A40662B45168F756EE098A34413C4
+    # Here we need to trust the key
+    # List the smart card status
+    gpg --card-status
     if ! [ -f git/gitconfig.symlink ]
     then
 
