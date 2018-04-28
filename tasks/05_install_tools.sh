@@ -134,8 +134,6 @@ function install_tools_run() {
         sudo gpasswd -a $USER docker
         # installing docker-compose
         yaourt -S docker-compose --noconfirm
-        # installing hyper
-        yaourt -S hyper --noconfirm
         # installing android studio
         yaourt -S android-studio --noconfirm
         # installing tilix

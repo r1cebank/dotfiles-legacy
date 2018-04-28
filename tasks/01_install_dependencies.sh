@@ -19,7 +19,9 @@ function install_dependencies_run() {
         sudo zypper in -y gcc gcc-c++ make openssl-devel wget git curl file python-setuptools autoconf automake pkgconfig python3 python3-devel
         sudo pip install thefuck
     elif [ "$PLATFORM" = "arch" ]; then
-        sudo pacman -S --noconfirm --needed base-devel thefuck python3 wget zsh curl yubikey-manager
+        log_info "updating existing dependencies..."
+        sudo pacman -Syu --noconfirm
+        sudo pacman -S --noconfirm --needed base-devel thefuck python3 wget zsh curl
         # Installing yaourt
         git clone https://aur.archlinux.org/package-query.git
         cd package-query
@@ -31,6 +33,8 @@ function install_dependencies_run() {
         cd ..
         rm -rf package-query
         rm -rf yaourt
+        # installing yubikey manager
+        sudo yaourt -S yubikey-manager --noconfirm
     elif [ "$PLATFORM" = "darwin" ]; then
         log_info "macOS have existing dependencies we can work with"
     fi
