@@ -1,5 +1,6 @@
 {
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Nord",
-    "files.insertFinalNewline": true
+    "workbench.colorTheme": "Adapta Nokto",
+    "files.insertFinalNewline": true,
+    "editor.fontFamily": "'Hack', 'monospace', monospace, 'Droid Sans Fallback'"
 }
