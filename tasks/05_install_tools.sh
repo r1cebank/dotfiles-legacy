@@ -115,7 +115,7 @@ function install_tools_run() {
         # Adding Chrome
         yaourt -S google-chrome --noconfirm
         # installing telegram
-        yaourt -S telegram-desktop-bin --noconfirm
+        yaourt -S telegram-desktop --noconfirm
         # installing vscode
         yaourt -S visual-studio-code-bin --noconfirm
         # installing java
