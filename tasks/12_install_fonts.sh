@@ -22,6 +22,7 @@ function install_fonts_run() {
         fc-cache -f -v
     elif [ "$PLATFORM" = "arch" ]; then
         yaourt -S ttf-hack --noconfirm
+        yaourt -S ttf-roboto --noconfirm
     fi
     return ${E_SUCCESS}
 }
