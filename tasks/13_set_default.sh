@@ -38,7 +38,7 @@ function set_default_run() {
         #     gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
         #     gsettings set org.gnome.desktop.interface icon-theme 'Arc'
         #     gsettings set org.gnome.shell enabled-extensions "['caffeine@patapon.info', 'clipboard-indicator@tudmotu.com', 'emoji-selector@maestroschan.fr', 'gnome-shell-screenshot@ttll.de', 'openweather-extension@jenslody.de', 'show-desktop-button@amivaleo', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'status-area-horizontal-spacing@mathematical.coffee.gmail.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'topIcons@adel.gadllah@gmail.com']"
-    fi
+        # fi
     elif [ "$PLATFORM" = "debian" ]; then
         log_info "Skipping default setting"
         # skipping setting default
@@ -49,7 +49,7 @@ function set_default_run() {
         #     gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
         #     gsettings set org.gnome.desktop.interface icon-theme 'Arc'
         #     gsettings set org.gnome.shell enabled-extensions "['caffeine@patapon.info', 'clipboard-indicator@tudmotu.com', 'emoji-selector@maestroschan.fr', 'gnome-shell-screenshot@ttll.de', 'openweather-extension@jenslody.de', 'show-desktop-button@amivaleo', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'status-area-horizontal-spacing@mathematical.coffee.gmail.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'topIcons@adel.gadllah@gmail.com']"
-    fi
+        # fi
     fi
     # Changing default shell
     chsh -s $(which zsh);
