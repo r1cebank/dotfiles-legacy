@@ -147,7 +147,7 @@ function install_tools_run() {
         # installing adapta theme
         yaourt -S adapta-gtk-theme --noconfirm
         # installing papirus-icon-theme
-        yaourt -S papirus-icon-theme
+        yaourt -S papirus-icon-theme --noconfirm
 
     elif [ "$PLATFORM" = "centos" ]; then
         # Ading vscode
