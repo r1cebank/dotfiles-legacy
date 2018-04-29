@@ -30,6 +30,7 @@ function set_default_run() {
         # Display crash dialogs as notifications
         defaults write com.apple.CrashReporter UseUNC 1
     elif [ "$PLATFORM" = "debian" ]; then
+        log_info "Skipping default setting"
         # if hash gnome-shell >/dev/null 2>&1; then
         #     log_info "setting gnome shell favorite"
         #     gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'code.desktop', 'slack.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"
@@ -37,8 +38,9 @@ function set_default_run() {
         #     gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
         #     gsettings set org.gnome.desktop.interface icon-theme 'Arc'
         #     gsettings set org.gnome.shell enabled-extensions "['caffeine@patapon.info', 'clipboard-indicator@tudmotu.com', 'emoji-selector@maestroschan.fr', 'gnome-shell-screenshot@ttll.de', 'openweather-extension@jenslody.de', 'show-desktop-button@amivaleo', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'status-area-horizontal-spacing@mathematical.coffee.gmail.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'topIcons@adel.gadllah@gmail.com']"
-        # fi
+    fi
     elif [ "$PLATFORM" = "debian" ]; then
+        log_info "Skipping default setting"
         # skipping setting default
         # if hash gnome-shell >/dev/null 2>&1; then
         #     log_info "setting gnome shell favorite"
@@ -47,7 +49,7 @@ function set_default_run() {
         #     gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
         #     gsettings set org.gnome.desktop.interface icon-theme 'Arc'
         #     gsettings set org.gnome.shell enabled-extensions "['caffeine@patapon.info', 'clipboard-indicator@tudmotu.com', 'emoji-selector@maestroschan.fr', 'gnome-shell-screenshot@ttll.de', 'openweather-extension@jenslody.de', 'show-desktop-button@amivaleo', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'status-area-horizontal-spacing@mathematical.coffee.gmail.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'topIcons@adel.gadllah@gmail.com']"
-        # fi
+    fi
     fi
     # Changing default shell
     chsh -s $(which zsh);
