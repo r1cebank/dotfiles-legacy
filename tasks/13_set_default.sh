@@ -36,6 +36,8 @@ function set_default_run() {
             gsettings set org.gnome.desktop.interface gtk-theme 'Adapta-Nokto'
             gsettings set org.gnome.shell.extensions.user-theme name 'Adapta-Noktok'
             gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Adapta-Nokto'
+            gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
+            gsettings set org.gnome.shell.extensions.dash-to-dock show-show-apps-button false
         fi
     elif [ "$PLATFORM" = "arch" ]; then
         dconf load /com/gexperts/Tilix/ < $DOTFILES_ROOT/tilix/tilix.conf
@@ -45,6 +47,8 @@ function set_default_run() {
             gsettings set org.gnome.desktop.interface gtk-theme 'Adapta-Nokto'
             gsettings set org.gnome.shell.extensions.user-theme name 'Adapta-Nokto'
             gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Adapta-Nokto'
+            gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
+            gsettings set org.gnome.shell.extensions.dash-to-dock show-show-apps-button false
         fi
     fi
     # Changing default shell
