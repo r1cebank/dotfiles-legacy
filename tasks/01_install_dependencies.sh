@@ -36,7 +36,7 @@ function install_dependencies_run() {
         rm -rf package-query
         rm -rf yaourt
         # installing yubikey manager
-        sudo yaourt -S yubikey-manager --noconfirm
+        yaourt -S yubikey-manager --noconfirm
     elif [ "$PLATFORM" = "darwin" ]; then
         log_info "macOS have existing dependencies we can work with"
     fi
