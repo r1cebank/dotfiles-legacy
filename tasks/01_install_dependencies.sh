@@ -19,6 +19,8 @@ function install_dependencies_run() {
         sudo zypper in -y gcc gcc-c++ make openssl-devel wget git curl file python-setuptools autoconf automake pkgconfig python3 python3-devel
         sudo pip install thefuck
     elif [ "$PLATFORM" = "arch" ]; then
+        log_info "temporaily increasing /tmp to 10GB"
+        sudo mount -o remount,size=10G,noatime /tmp
         log_info "updating existing dependencies..."
         sudo pacman -Syu --noconfirm
         sudo pacman -S --noconfirm --needed base-devel thefuck python3 wget zsh curl
