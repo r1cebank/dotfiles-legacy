@@ -122,9 +122,9 @@ function install_tools_run() {
         yaourt -S jdk8 --noconfirm
         # installing docker
         if lsmod | grep loop &> /dev/null; then
-            echo "loop is loaded!"
+            log_info "loop is loaded!"
         else
-            echo "loop is not loaded! Enabling it now"
+            log_info "loop is not loaded! Enabling it now"
             sudo tee /etc/modules-load.d/loop.conf <<< "loop"
             sudo modprobe loop
         fi
