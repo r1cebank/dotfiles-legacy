@@ -38,6 +38,7 @@ function set_default_run() {
             gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Adapta-Nokto'
             gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
             gsettings set org.gnome.shell.extensions.dash-to-dock show-show-apps-button false
+            gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
             gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.gedit.desktop', 'visual-studio-code.desktop', 'com.gexperts.Tilix.desktop', 'pamac-manager.desktop', 'org.gnome.Screenshot.desktop']"
         fi
     elif [ "$PLATFORM" = "arch" ]; then
@@ -50,6 +51,7 @@ function set_default_run() {
             gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Adapta-Nokto'
             gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
             gsettings set org.gnome.shell.extensions.dash-to-dock show-show-apps-button false
+            gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
             gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.gedit.desktop', 'visual-studio-code.desktop', 'com.gexperts.Tilix.desktop', 'pamac-manager.desktop', 'org.gnome.Screenshot.desktop']"
         fi
     fi
