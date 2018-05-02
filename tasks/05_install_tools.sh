@@ -148,6 +148,11 @@ function install_tools_run() {
         yaourt -S adapta-gtk-theme --noconfirm
         # installing papirus-icon-theme
         yaourt -S papirus-icon-theme --noconfirm
+        # installing zeal
+        yaourt -S zeal --noconfirm
+        sudo sed -i '/Exec=zeal %u/c\Exec=env QT_AUTO_SCREEN_SCALE_FACTOR=0 zeal %u' /usr/share/applications/zeal.desktop # fix ui scaling issue
+        # installing slack
+        yaourt -S slack-desktop --noconfirm
 
     elif [ "$PLATFORM" = "centos" ]; then
         # Ading vscode
