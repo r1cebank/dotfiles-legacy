@@ -2,7 +2,7 @@
 export ZSH=$HOME/.dotfiles
 
 # JAVAHOME
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+export JAVA_HOME=/usr/lib/jvm/default
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Github
