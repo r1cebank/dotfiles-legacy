@@ -52,6 +52,7 @@ function set_default_run() {
             gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
             gsettings set org.gnome.shell.extensions.dash-to-dock show-show-apps-button false
             gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+            gsettings set org.gnome.shell enabled-extensions "['dash-to-dock@micxgx.gmail.com', 'gnomenu@panacier.gmail.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'appindicatorsupport@rgcjonas.gmail.com', 'manjaro-update@Chrysostomus', 'arc-menu@linxgem33.com', 'pixel-saver@deadalnix.me', 'caffeine@patapon.info', 'show-desktop-button@amivaleo', 'workspace-labels@mathematical.coffee.gmail.com']"
             gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.gedit.desktop', 'visual-studio-code.desktop', 'com.gexperts.Tilix.desktop', 'pamac-manager.desktop', 'org.gnome.Screenshot.desktop']"
         fi
     fi
