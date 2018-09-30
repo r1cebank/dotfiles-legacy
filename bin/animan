@@ -5,7 +5,7 @@
 # License: MIT
 
 # TODO Install dependencies
-if [[ -n $(type renamer >/dev/null 2>&1) ]]; then
+if ! hash renamer >/dev/null 2>&1; then
   npm install --global renamer
 fi
 
