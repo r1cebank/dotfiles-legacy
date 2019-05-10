@@ -37,6 +37,9 @@ function install_dependencies_run() {
         rm -rf yaourt
         # installing yubikey manager
         yaourt -S yubikey-manager --noconfirm
+        # enable pcscd service
+        sudo systemctl enable pcscd
+        sudo systemctl start pcscd
     elif [ "$PLATFORM" = "darwin" ]; then
         log_info "macOS have existing dependencies we can work with"
     fi
