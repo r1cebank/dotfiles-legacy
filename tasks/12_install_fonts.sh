@@ -23,6 +23,7 @@ function install_fonts_run() {
     elif [ "$PLATFORM" = "arch" ]; then
         yaourt -S ttf-hack --noconfirm
         yaourt -S ttf-roboto --noconfirm
+        sudo pacman -S noto-fonts-emoji --noconfirm
     fi
     return ${E_SUCCESS}
 }
