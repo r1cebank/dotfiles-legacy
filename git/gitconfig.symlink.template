@@ -15,6 +15,9 @@
         count   = !git shortlog -sn
 	unstage = reset HEAD --
 	flip = checkout -
+	yolo = push --force
+	squash = !f(){ git rebase -i HEAD~${1}; }; f
+	alias = ! git config --get-regexp ^alias\. | sed -e s/^alias\.// -e s/\ /\ =\ /
 [color]
         diff = auto
         status = auto
