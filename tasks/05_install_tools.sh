@@ -153,9 +153,12 @@ function install_tools_run() {
         sudo sed -i '/Exec=zeal %u/c\Exec=env QT_AUTO_SCREEN_SCALE_FACTOR=0 zeal %u' /usr/share/applications/zeal.desktop # fix ui scaling issue
         # installing slack
         yaourt -S slack-desktop --noconfirm
-        
+
         # installing godot
         yaourt -S godot-bin --noconfirm
+
+        # installing nim
+        curl https://nim-lang.org/choosenim/init.sh -sSf | sh
 
     elif [ "$PLATFORM" = "centos" ]; then
         # Ading vscode
