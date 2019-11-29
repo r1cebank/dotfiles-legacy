@@ -7,8 +7,8 @@ function configure_git_init() {
 function configure_git_run() {
     PLATFORM=$(settings_get "PLATFORM")
     # Setup gpg keys
-    gpg --recv BA24F9FB4C2A40662B45168F756EE098A34413C4
-    gpg --edit-key BA24F9FB4C2A40662B45168F756EE098A34413C4
+    gpg --recv $(gpg --card-status --with-colons 2> /dev/null | grep '^fpr:' | cut -d':' -f 2)
+    gpg --edit-key $(gpg --card-status --with-colons 2> /dev/null | grep '^fpr:' | cut -d':' -f 2)
     # Here we need to trust the key
     # List the smart card status
     gpg --card-status
