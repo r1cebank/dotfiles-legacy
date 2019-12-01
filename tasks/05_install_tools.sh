@@ -107,20 +107,12 @@ function install_tools_run() {
         sudo dpkg -i hyper.deb
         rm hyper.deb
     elif [ "$PLATFORM" = "arch" ]; then
+        # install system tools
+        log_info "Installing system tools."
+        while read in; do yaourt -S "$in" --nocinfirm; done < $DOTFILES_ROOT/system/tools.list
         # Instal flutter
         git clone -b beta https://github.com/flutter/flutter.git
 
-        # Adding dart
-        yaourt -S dart --noconfirm
-        # Adding Chrome
-        yaourt -S google-chrome --noconfirm
-        # installing telegram
-        yaourt -S telegram-desktop --noconfirm
-        # installing vscode
-        yaourt -S visual-studio-code-bin --noconfirm
-        # installing java
-        yaourt -S jdk8 --noconfirm
-        # installing docker
         if lsmod | grep loop &> /dev/null; then
             log_info "loop is loaded!"
         else
@@ -128,34 +120,13 @@ function install_tools_run() {
             sudo tee /etc/modules-load.d/loop.conf <<< "loop"
             sudo modprobe loop
         fi
-        yaourt -S docker --noconfirm
+        # start docker
         sudo systemctl start docker.service
         sudo systemctl enable docker.service
         sudo gpasswd -a $USER docker
-        # installing docker-compose
-        yaourt -S docker-compose --noconfirm
-        # installing android studio
-        yaourt -S android-studio --noconfirm
-        # installing tilix
-        yaourt -S tilix --noconfirm
-        # install virtualbox
-        yaourt -S virtualbox-bin --noconfirm
-        # install vagrant
-        yaourt -S vagrant --noconfirm
-        # installing direnv
-        yaourt -S direnv --noconfirm
-        # installing adapta theme
-        yaourt -S adapta-gtk-theme --noconfirm
-        # installing papirus-icon-theme
-        yaourt -S papirus-icon-theme --noconfirm
-        # installing zeal
-        yaourt -S zeal --noconfirm
-        sudo sed -i '/Exec=zeal %u/c\Exec=env QT_AUTO_SCREEN_SCALE_FACTOR=0 zeal %u' /usr/share/applications/zeal.desktop # fix ui scaling issue
-        # installing slack
-        yaourt -S slack-desktop --noconfirm
 
-        # installing godot
-        yaourt -S godot-bin --noconfirm
+        # fix zeal screen issue
+        sudo sed -i '/Exec=zeal %u/c\Exec=env QT_AUTO_SCREEN_SCALE_FACTOR=0 zeal %u' /usr/share/applications/zeal.desktop # fix ui scaling issue
 
         # installing nim
         curl https://nim-lang.org/choosenim/init.sh -sSf | sh
