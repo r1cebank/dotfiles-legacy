@@ -109,7 +109,7 @@ function install_tools_run() {
     elif [ "$PLATFORM" = "arch" ]; then
         # install system tools
         log_info "Installing system tools."
-        while read in; do yaourt -S "$in" --nocinfirm; done < $DOTFILES_ROOT/system/tools.list
+        while read in; do yay -S "$in" --noconfirm; done < $DOTFILES_ROOT/system/tools.list
         # Instal flutter
         git clone -b beta https://github.com/flutter/flutter.git
 
