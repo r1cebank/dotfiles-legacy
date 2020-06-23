@@ -14,7 +14,7 @@ function configure_kryptonite_run() {
         if [ "$PLATFORM" = "debian" ]; then
             curl https://krypt.co/kr | sh
         elif [ "$PLATFORM" = "arch" ]; then
-            yay -S kr --noconfirm
+            yay -S kr-bin --noconfirm
         fi
         kr pair
     else

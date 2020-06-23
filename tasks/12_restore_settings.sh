@@ -50,6 +50,11 @@ function restore_settings_run() {
                 dconf load / < $DOTFILES_ROOT/gnome/dconf-settings.ini
             fi
         fi
+        # start the plank dock
+        if hash plank >/dev/null 2>&1; then
+            cp $DOTFILES_ROOT/gnome/autostart/plank.desktop $HOME/.config/autostart/plank.desktop
+            setsid plank &>/dev/null
+        fi
     else
         log_info "not running for headless host"
     fi
