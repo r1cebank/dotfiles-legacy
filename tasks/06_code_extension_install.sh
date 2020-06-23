@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-function code_install_init() {
-    task_setup "code_install" "Code Install" "Install code packages" "install_applications"
+function code_extension_install_init() {
+    task_setup "code_extension_install" "Code Install" "Install code extensions" "install_applications"
 }
 
-function code_install_run() {
+function code_extension_install_run() {
     # Check for code
     if hash code >/dev/null 2>&1; then
         log_info "Installing code extensions."

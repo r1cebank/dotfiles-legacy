@@ -57,7 +57,7 @@ function install_applications_run() {
             rm hyper.deb
         elif [ "$PLATFORM" = "arch" ]; then
             # install system tools
-            log_info "Installing system tools."
+            log_info "Installing applications."
             while read in; do yay -S "$in" --noconfirm; done < $DOTFILES_ROOT/system/apps.arch.list
 
             if lsmod | grep loop &> /dev/null; then
