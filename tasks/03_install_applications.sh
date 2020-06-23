@@ -7,7 +7,7 @@ function install_applications_init() {
 function install_applications_run() {
     PLATFORM=$(settings_get "PLATFORM")
     HOST_TYPE=$(settings_get "HOST_TYPE")
-    if [ "$HOST_TYPE" = "desktop"]; then
+    if [ "$HOST_TYPE" = "desktop" ]; then
         if [ "$PLATFORM" = "debian" ]; then
             # Adding chrome
             wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -

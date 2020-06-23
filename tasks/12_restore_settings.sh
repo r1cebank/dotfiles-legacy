@@ -4,10 +4,10 @@ function restore_settings_init() {
     task_setup "restore_settings" "Restore settings" "Restore user settings" "check_system"
 }
 
-function set_default_run() {
+function restore_settings_run() {
     PLATFORM=$(settings_get "PLATFORM")
     HOST_TYPE=$(settings_get "HOST_TYPE")
-    if [ "$HOST_TYPE" = "desktop"]; then
+    if [ "$HOST_TYPE" = "desktop" ]; then
         if [ "$PLATFORM" = "darwin" ]; then
 
             # Show the ~/Library folder.
