@@ -1,5 +1,5 @@
 yarn
 ava
 eslint
-npm-check
-react-native-cli
+jest
+typescript

@@ -1,10 +1,11 @@
-dart
+gnome-extra
+plank
+firefox
 google-chrome
 telegram-desktop
 jdk8
 docker
 docker-compose
-android-studio
 tilix
 virtualbox-bin
 vagrant
@@ -17,3 +18,4 @@ papirus-icon-theme
 zeal
 slack-desktop
 godot-bin
+yubikey-manager

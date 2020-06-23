@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function configure_kryptonite_init() {
-    task_setup "configure_kryptonite" "Configure kryptonite" "Configure kryptonite on the system" "install_brew"
+    task_setup "configure_kryptonite" "Configure kryptonite" "Configure kryptonite on the system" "check_system"
 }
 
 function configure_kryptonite_run() {
@@ -11,12 +11,10 @@ function configure_kryptonite_run() {
         log_info "Installing Kryptonite for you."
 
         # Install the correct homebrew for each OS type
-        if [ "$PLATFORM" = "darwin" ]; then
-            brew install kryptco/tap/kr
-        elif [ "$PLATFORM" = "debian" ]; then
+        if [ "$PLATFORM" = "debian" ]; then
             curl https://krypt.co/kr | sh
         elif [ "$PLATFORM" = "arch" ]; then
-            yaourt -S kr --noconfirm
+            yay -S kr --noconfirm
         fi
         kr pair
     else

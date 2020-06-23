@@ -20,8 +20,8 @@ function install_nodejs_run() {
 
 
         # Install the last node lts
-        nvm install 8
-        nvm alias default 8
+        nvm install 12
+        nvm alias default 12
 
     else
         log_info "You already have nvm installed"

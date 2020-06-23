@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function npm_install_init() {
-    task_setup "npm_install" "npm Install" "Install npm dependencies" "check_system install_nodejs"
+    task_setup "npm_install" "npm Install" "Install npm dependencies" "install_nodejs"
 }
 
 function npm_install_run() {

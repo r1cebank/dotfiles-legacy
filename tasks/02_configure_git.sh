@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function configure_git_init() {
-    task_setup "configure_git" "Configuring GIT" "Configure git user and email"
+    task_setup "configure_git" "Configuring GIT" "Configure git user and email" "check_system"
 }
 
 function configure_git_run() {

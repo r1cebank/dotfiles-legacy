@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function link_dotfile_init() {
-    task_setup "link_dotfile" "Link Dotfiles" "Link dotfiles"
+    task_setup "link_dotfile" "Link Dotfiles" "Link dotfiles" "check_system"
 }
 
 function link_dotfile_run() {

@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 
 function install_fonts_init() {
-    task_setup "install_fonts" "Install fonts" "Install fonts"
+    task_setup "install_fonts" "Install fonts" "Install fonts" "check_system"
 }
 
 function install_fonts_run() {
     PLATFORM=$(settings_get "PLATFORM")
-    if [ "$PLATFORM" = "darwin" ]; then
-        log_info "not going to run on OSX"
-    elif [ "$PLATFORM" = "debian" ]; then
+    if [ "$PLATFORM" = "debian" ]; then
         mkdir -p $HOME/.fonts
         local overwrite_all=false backup_all=false skip_all=false
 
@@ -21,9 +19,8 @@ function install_fonts_run() {
         done
         fc-cache -f -v
     elif [ "$PLATFORM" = "arch" ]; then
-        yaourt -S ttf-hack --noconfirm
-        yaourt -S ttf-roboto --noconfirm
-        sudo pacman -S noto-fonts-emoji --noconfirm
+        log_info "Installing system fonts."
+        while read in; do yay -S "$in" --noconfirm; done < $DOTFILES_ROOT/system/fonts.arch.list
     fi
     return ${E_SUCCESS}
 }

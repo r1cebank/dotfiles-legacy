@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function gnome_extensions_init() {
-    task_setup "gnome_extensions" "Gnome Extensions" "Install gnome extensions" "install_tools"
+    task_setup "gnome_extensions" "Gnome Extensions" "Install gnome extensions" "install_applications"
 }
 
 function gnome_extensions_run() {

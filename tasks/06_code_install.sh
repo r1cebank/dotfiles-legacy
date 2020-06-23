@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function code_install_init() {
-    task_setup "code_install" "Code Install" "Install code packages" "install_tools"
+    task_setup "code_install" "Code Install" "Install code packages" "install_applications"
 }
 
 function code_install_run() {
