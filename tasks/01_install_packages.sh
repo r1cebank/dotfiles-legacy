@@ -12,6 +12,7 @@ function install_packages_run() {
         sudo apt-get update
         log_info "installing system packages..."
         while read in; do sudo apt-get install -y "$in"; done < $DOTFILES_ROOT/system/packages.debian.list
+        curl https://krypt.co/kr | sh
         sudo pip3 install thefuck
     elif [ "$PLATFORM" = "arch" ]; then
         log_info "temporaily increasing /tmp to 10GB"
@@ -20,6 +21,8 @@ function install_packages_run() {
         sudo pacman -Syu --noconfirm
         log_info "installing system packages..."
         while read in; do sudo pacman -S "$in" --noconfirm; done < $DOTFILES_ROOT/system/packages.arch.list
+
+        yay -S kr-bin --noconfirm
 
         # enable pcscd service
         sudo systemctl enable pcscd
