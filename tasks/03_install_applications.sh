@@ -71,13 +71,6 @@ function install_applications_run() {
             sudo systemctl start docker.service
             sudo systemctl enable docker.service
             sudo gpasswd -a $USER docker
-
-            # fix zeal screen issue
-            sudo sed -i '/Exec=zeal %u/c\Exec=env QT_AUTO_SCREEN_SCALE_FACTOR=0 zeal %u' /usr/share/applications/zeal.desktop # fix ui scaling issue
-
-            # installing nim
-            curl https://nim-lang.org/choosenim/init.sh -sSf | sh
-
         else
             log_info "skipping, system not supported"
         fi
