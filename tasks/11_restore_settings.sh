@@ -48,7 +48,7 @@ function restore_settings_run() {
             if hash gnome-shell >/dev/null 2>&1; then
                 log_info "loading gnome settings"
                 dconf load / < $DOTFILES_ROOT/gnome/dconf-settings.ini
-                killall -SIGQUIT gnome-shell
+                # killall -SIGQUIT gnome-shell
             fi
         fi
         # start the plank dock
