@@ -10,7 +10,7 @@ function gnome_extensions_run() {
     if hash gnome-shell >/dev/null 2>&1; then
         log_info "Installing gnome extensions."
         while read in; do $DOTFILES_ROOT/bin/gnome-ext-install install "$in"; done < $DOTFILES_ROOT/gnome/extensions.list
-        gnome-shell --replace &>/dev/null & disown
+        # gnome-shell --replace &>/dev/null & disown
     else
         log_info "Did not find gnome, skipping gnome extensions."
     fi
