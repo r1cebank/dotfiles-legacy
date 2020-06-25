@@ -54,8 +54,9 @@ function restore_settings_run() {
         # start the plank dock
         if hash plank >/dev/null 2>&1; then
             cp $DOTFILES_ROOT/gnome/autostart/plank.desktop $HOME/.config/autostart/plank.desktop
-            mkdir -p $HOME/.config/plank/dock1
-            cp $DOTFILES_ROOT/plank/dock1/*.dockitem $HOME/.config/plank/dock1
+            mkdir -p $HOME/.config/plank/dock1/launchers
+            rm -rf $HOME/.config/plank/dock1/launchers/*
+            cp $DOTFILES_ROOT/plank/dock1/*.dockitem $HOME/.config/plank/dock1/launchers
             setsid plank &>/dev/null
         fi
     else
