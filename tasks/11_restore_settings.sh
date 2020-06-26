@@ -9,28 +9,7 @@ function restore_settings_run() {
     HOST_TYPE=$(settings_get "HOST_TYPE")
     if [ "$HOST_TYPE" = "desktop" ]; then
         if [ "$PLATFORM" = "darwin" ]; then
-
-            # Show the ~/Library folder.
-            chflags nohidden ~/Library
-
-            # Set the Finder prefs for showing a few different volumes on the Desktop.
-            defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-            defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
-
-            # Set up Safari for development.
-            defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-            defaults write com.apple.Safari IncludeDevelopMenu -bool true
-            defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-            defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
-            defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
-
-            # Disable guest access
-            sudo defaults write /Library/Preferences/com.apple.AppleFileServer guestAccess -bool NO
-            sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server AllowGuestAccess -bool NO
-            sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool NO
-
-            # Display crash dialogs as notifications
-            defaults write com.apple.CrashReporter UseUNC 1
+            log_info "skipping for OSX"
         elif [ "$PLATFORM" = "debian" ]; then
             dconf load /com/gexperts/Tilix/ < $DOTFILES_ROOT/tilix/tilix.conf
             if hash gnome-shell >/dev/null 2>&1; then
