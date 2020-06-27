@@ -71,6 +71,11 @@ function install_applications_run() {
             sudo systemctl start docker.service
             sudo systemctl enable docker.service
             sudo gpasswd -a $USER docker
+
+            # configure yubikey-agent
+            systemctl daemon-reload --user
+            sudo systemctl enable --now pcscd.socket
+            systemctl --user enable --now yubikey-agent
         else
             log_info "skipping, system not supported"
         fi
