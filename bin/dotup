@@ -4,26 +4,25 @@
 #
 # Updates dotfiles by pulling from the github.
 
-export ZSH=$HOME/.dotfiles
+export DOTFILES_ROOT=$HOME/.dotfiles
 
 # Pull changes
-( cd $ZSH; git pull; )
-
-if [ "$PLATFORM" = "darwin" ]; then
-    echo "updating for macos"
-elif [ "$PLATFORM" = "debian" ]; then
-    echo 'updating for debian based system'
-elif [ "$PLATFORM" = "arch" ]; then
-    echo 'updating for arch based system'
-else
-    echo 'skipping update'
-fi
+( cd $DOTFILES_ROOT; git pull; )
 
 # if first time installing, will not update npm
 
-if [ ! -f $ZSH/installed ]; then
-    # Update global npm packages
-    npm upgrade -g
+if [ ! -f $DOTFILES_ROOT/installed ]; then
+    # Sync settings over
+    read -p "Sync settings from upstream? " -n 1 -r
+    echo    # (optional) move to a new line
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        if hash gnome-shell >/dev/null 2>&1; then
+            log_info "loading gnome settings"
+            dconf load / < $DOTFILES_ROOT/gnome/dconf-settings.ini
+            # killall -SIGQUIT gnome-shell
+        fi
+    fi
 else
     echo "First time installing, will not update"
 fi
