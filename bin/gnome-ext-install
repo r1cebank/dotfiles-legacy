@@ -52,13 +52,13 @@ install () {
     rm -rfv "$temp"
     trap '' EXIT
 
-    gnome-shell-extension-tool --enable-extension="$uuid"
+    gnome-extensions --enable-extension="$uuid"
 }
 
 remove () {
     # args: the uuid to remove
     uuid="$1"
-    gnome-shell-extension-tool -d "$uuid"
+    gnome-extensions -d "$uuid"
     rm -rfv "$HOME/.local/share/gnome-shell/extensions/$uuid"
 }
 
