@@ -2,9 +2,11 @@ base-devel
 thefuck
 python3
 wget
+fwupd
 zsh
 curl
 ccid
+pcsc-tools
 opensc
 nim
 chrome-gnome-shell

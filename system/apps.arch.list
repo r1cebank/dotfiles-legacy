@@ -7,8 +7,6 @@ jdk8
 docker
 docker-compose
 tilix
-virtualbox-bin
-vagrant
 direnv
 adapta-gtk-theme
 flat-remix-gtk
@@ -21,3 +19,4 @@ zeal
 slack-desktop
 godot-bin
 yubikey-manager
+yubioath-desktop
