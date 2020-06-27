@@ -9,9 +9,6 @@ export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/yubikey-agent/yubikey-agent.sock"
 # SHELL
 SHELL=/usr/bin/zsh
 
-# your project folder that we can `c [tab]` to
-export PROJECTS=~/Github
-
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
