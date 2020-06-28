@@ -9,5 +9,6 @@ ccid
 pcsc-tools
 opensc
 nim
+nano
 chrome-gnome-shell
 pacman-contrib
