@@ -10,3 +10,4 @@ pcsc-tools
 opensc
 nim
 chrome-gnome-shell
+pacman-contrib

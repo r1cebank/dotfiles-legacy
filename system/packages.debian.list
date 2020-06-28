@@ -24,4 +24,3 @@ scdaemon
 pcscd
 yubikey-personalization
 libusb-1.0-0-dev
-pacman-contrib
