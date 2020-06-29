@@ -58,7 +58,11 @@ function install_applications_run() {
         elif [ "$PLATFORM" = "arch" ]; then
             # install system tools
             log_info "Installing applications."
-            while read in; do yay -S "$in" --noconfirm; done < $DOTFILES_ROOT/system/apps.arch.list
+
+            while read in; do
+                [[ $in == !* ]] && continue
+                sudo yay -S "$in" --noconfirm;
+            done < $DOTFILES_ROOT/system/apps.arch.list
 
             if lsmod | grep loop &> /dev/null; then
                 log_info "loop is loaded!"

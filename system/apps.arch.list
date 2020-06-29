@@ -20,5 +20,5 @@ slack-desktop
 godot-bin
 yubikey-manager-qt
 yubioath-desktop
-yubikey-agent
-gnupg-scdaemon-shared-access
+!yubikey-agent
+!gnupg-scdaemon-shared-access
