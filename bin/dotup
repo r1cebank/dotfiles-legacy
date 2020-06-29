@@ -22,6 +22,7 @@ if [ ! -f $DOTFILES_ROOT/installed ]; then
             dconf load / < $DOTFILES_ROOT/gnome/dconf-settings.ini
             # killall -SIGQUIT gnome-shell
         fi
+        # Do other stuff here
     fi
 else
     echo "First time installing, will not update"
