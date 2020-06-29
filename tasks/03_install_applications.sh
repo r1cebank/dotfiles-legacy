@@ -61,7 +61,7 @@ function install_applications_run() {
 
             while read in; do
                 [[ $in == !* ]] && continue
-                sudo yay -S "$in" --noconfirm;
+                yay -S "$in" --noconfirm;
             done < $DOTFILES_ROOT/system/apps.arch.list
 
             if lsmod | grep loop &> /dev/null; then
