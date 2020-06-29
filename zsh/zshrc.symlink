@@ -4,7 +4,10 @@ export KUBECONFIG=$HOME/.kube/geck.yaml
 # JAVAHOME
 export JAVA_HOME=/usr/lib/jvm/java-8-jdk
 # yubikey-agent
-export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/yubikey-agent/yubikey-agent.sock"
+# export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/yubikey-agent/yubikey-agent.sock"
+
+# gpg-agent
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 # SHELL
 SHELL=/usr/bin/zsh

@@ -20,7 +20,10 @@ function install_packages_run() {
         log_info "updating existing dependencies..."
         sudo pacman -Syu --noconfirm
         log_info "installing system packages..."
-        while read in; do sudo pacman -S "$in" --noconfirm; done < $DOTFILES_ROOT/system/packages.arch.list
+        while read in; do
+            [[ $in == !* ]] && continue
+            sudo pacman -S "$in" --noconfirm;
+        done < $DOTFILES_ROOT/system/packages.arch.list
 
         yay -S kr-bin --noconfirm
 
