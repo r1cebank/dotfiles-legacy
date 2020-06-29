@@ -9,7 +9,12 @@ function gnome_extensions_run() {
     mkdir -p $HOME/.local/share/gnome-shell/extensions
     if hash gnome-shell >/dev/null 2>&1; then
         log_info "Installing gnome extensions."
-        while read in; do $DOTFILES_ROOT/bin/gnomex install "$in"; done < $DOTFILES_ROOT/gnome/extensions.list
+        while read in; do
+            until $DOTFILES_ROOT/bin/gnomex install "$in"
+            do
+                echo "Try to install $in"
+            done
+        done < $DOTFILES_ROOT/gnome/extensions.list
         # gnome-shell --replace &>/dev/null & disown
     else
         log_info "Did not find gnome, skipping gnome extensions."
