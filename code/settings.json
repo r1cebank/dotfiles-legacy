@@ -1,6 +1,6 @@
 {
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Adapta Nokto",
+    "workbench.iconTheme": "ayu",
+    "workbench.colorTheme": "Ayu Mirage",
     "files.insertFinalNewline": true,
     "editor.fontFamily": "'Hack', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.suggestSelection": "first",
