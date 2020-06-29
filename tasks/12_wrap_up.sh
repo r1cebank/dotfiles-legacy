@@ -14,7 +14,7 @@ function wrap_up_run() {
         # Force Xorg login
         sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
         # Fix yubikey-agent service
-        sudo sed -i 's/multi-user.target/default.target/g' /usr/lib/systemd/user/yubikey-agent.service
+        # sudo sed -i 's/multi-user.target/default.target/g' /usr/lib/systemd/user/yubikey-agent.service
         systemctl daemon-reload --user
         systemctl --user enable --now yubikey-agent
         if ask "Reboot?"; then
