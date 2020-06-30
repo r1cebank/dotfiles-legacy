@@ -19,6 +19,7 @@ function wrap_up_run() {
         # systemctl --user enable --now yubikey-agent
 
         # Setting fcitx config
+        fcitx > /dev/null 2>&1 &
         sed -i 's/sogouimebs:False/sogouimebs:True/g' $HOME/.config/fcitx/profile
         if ask "Reboot?"; then
             sudo reboot
