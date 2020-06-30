@@ -27,8 +27,9 @@ function configure_git_run() {
     fi
 
     # Setup gpg-agent
-    echo $AUTH_KEY >> $HOME/.gnupg/sshcontrol
     echo "enable-ssh-support" >> $HOME/.gnupg/gpg-agent.conf
     gpgconf --launch gpg-agent
+    echo "currently using as SSH key:"
+    ssh-add -L
     return ${E_SUCCESS}
 }
