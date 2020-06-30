@@ -17,6 +17,9 @@ function wrap_up_run() {
         # sudo sed -i 's/multi-user.target/default.target/g' /usr/lib/systemd/user/yubikey-agent.service
         # systemctl daemon-reload --user
         # systemctl --user enable --now yubikey-agent
+
+        # Setting fcitx config
+        sed -i 's/sogouimebs:False/sogouimebs:True/g' $HOME/.config/fcitx/profile
         if ask "Reboot?"; then
             sudo reboot
         fi
