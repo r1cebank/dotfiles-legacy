@@ -34,10 +34,8 @@ function wrap_up_run() {
             log_error "Fcitx profile does not exist after 5 secs..."
             return ${E_FAILURE}
         }
-        until grep -q "sogouimebs:False" "$HOME/.config/fcitx/profile";
-            log_info "Waiting for file to finish writing..."
-            do sleep 1;
-        done
+        log_info "Waiting for file to finish writing..."
+        sleep 10
         sed -i 's/sogouimebs:False/sogouimebs:True/g' $HOME/.config/fcitx/profile
         if ask "Reboot?"; then
             sudo reboot
