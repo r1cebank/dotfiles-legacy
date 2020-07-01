@@ -31,12 +31,14 @@ function wrap_up_run() {
         fcitx > /dev/null 2>&1 &
         log_info "Waiting for fcitx to start"
         wait_file "$HOME/.config/fcitx/profile" 5 || {
-            until grep -q "sogouimebs:False" "$HOME/.config/fcitx/profile";
-                log_info "Waiting for file to finish writing..."
-                do sleep 1;
-            done
-            sed -i 's/sogouimebs:False/sogouimebs:True/g' $HOME/.config/fcitx/profile
+            log_error "Fcitx profile does not exist after 5 secs..."
+            return ${E_FAILURE}
         }
+#         until grep -q "sogouimebs:False" "$HOME/.config/fcitx/profile";
+#             log_info "Waiting for file to finish writing..."
+#             do sleep 1;
+#         done
+        sed -i 's/sogouimebs:False/sogouimebs:True/g' $HOME/.config/fcitx/profile
         if ask "Reboot?"; then
             sudo reboot
         fi
