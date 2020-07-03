@@ -1,7 +1,7 @@
 gnome-extra
 plank
 firefox
-google-chrome
+!google-chrome
 telegram-desktop
 jdk8
 docker
