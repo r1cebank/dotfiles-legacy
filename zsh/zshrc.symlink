@@ -2,7 +2,7 @@
 export ZSH=$HOME/.dotfiles
 export KUBECONFIG=$HOME/.kube/geck.yaml
 # JAVAHOME
-export JAVA_HOME=/usr/lib/jvm/java-8-jdk
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 # yubikey-agent
 # export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/yubikey-agent/yubikey-agent.sock"
 
