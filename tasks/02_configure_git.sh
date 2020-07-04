@@ -18,7 +18,7 @@ function configure_git_run() {
     then
 
         git_authorname=$(enter_variable " - What is your github author name?" "$(whoami)")
-        git_authoremail=$(enter_variable " - What is your github author email?" "$(whoami)@gmail.com")
+        git_authoremail=$(enter_variable " - What is your github author email?" "$(whoami)@protonmail.com")
         git_gpgsign=$(enter_variable " - Do you want to enable commit signing? (true, false)" "true")
         git_gpgkey=$(enter_variable " - What is your signingkey?" "$(gpg --list-secret-keys --with-colons 2> /dev/null | grep '^sec:' | cut -d':' -f 5)")
 
