@@ -3,7 +3,6 @@ plank
 firefox
 !google-chrome
 telegram-desktop
-jdk8
 docker
 docker-compose
 tilix
