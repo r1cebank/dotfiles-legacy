@@ -29,7 +29,11 @@ function configure_git_run() {
     # Setup gpg-agent
     echo "enable-ssh-support" >> $HOME/.gnupg/gpg-agent.conf
     gpgconf --launch gpg-agent
-    echo "currently using as SSH key:"
+    log_info "currently using as SSH key:"
     ssh-add -L
+    log_info "Linking gpg config"
+    link_file "$DOTFILES_ROOT/gnupg/gpg.conf" "$HOME/.gnupg/gpg.conf"
+    link_file "$DOTFILES_ROOT/gnupg/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
+    link_file "$DOTFILES_ROOT/gnupg/scdaemon.conf" "$HOME/.gnupg/scdaemon.conf"
     return ${E_SUCCESS}
 }
