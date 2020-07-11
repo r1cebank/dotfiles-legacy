@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# dotsync
+#
+# Sync settings to github
+
+git_repo="https://github.com/r1cebank/dotfile-sync.git"
+
+tmp_dir=$(mktemp -d -t ci-XXXXXXXXXX)
+
+git clone $git_repo $tmp_dir
+
+( cd $tmp_dir; ./sync.sh -r; )

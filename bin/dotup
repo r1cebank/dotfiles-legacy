@@ -11,19 +11,19 @@ export DOTFILES_ROOT=$HOME/.dotfiles
 
 # if first time installing, will not update npm
 
-if [ ! -f $DOTFILES_ROOT/installed ]; then
-    # Sync settings over
-    read -p "Sync settings from upstream? " -n 1 -r
-    echo    # (optional) move to a new line
-    if [[ $REPLY =~ ^[Yy]$ ]]
-    then
-        if hash gnome-shell >/dev/null 2>&1; then
-            log_info "loading gnome settings"
-            dconf load / < $DOTFILES_ROOT/gnome/dconf-settings.ini
-            # killall -SIGQUIT gnome-shell
-        fi
-        # Do other stuff here
-    fi
-else
-    echo "First time installing, will not update"
-fi
+# if [ ! -f $DOTFILES_ROOT/installed ]; then
+#     # Sync settings over
+#     read -p "Sync settings from upstream? " -n 1 -r
+#     echo    # (optional) move to a new line
+#     if [[ $REPLY =~ ^[Yy]$ ]]
+#     then
+#         if hash gnome-shell >/dev/null 2>&1; then
+#             log_info "loading gnome settings"
+#             dconf load / < $DOTFILES_ROOT/gnome/dconf-settings.ini
+#             # killall -SIGQUIT gnome-shell
+#         fi
+#         # Do other stuff here
+#     fi
+# else
+#     echo "First time installing, will not update"
+# fi
