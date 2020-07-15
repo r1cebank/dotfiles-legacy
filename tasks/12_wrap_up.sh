@@ -29,8 +29,17 @@ function wrap_up_run() {
         # systemctl daemon-reload --user
         # systemctl --user enable --now yubikey-agent
 
+        # Add plymouth hook
+
+        # Enable intel module
+        sudo sed -i 's/MODULES=()/MODULES=(i915)/g' /etc/mkinitcpio.conf
+        sudo sed -i 's/HOOKS=(base udev systemd/HOOKS=(base udev systemd sd-plymouth/g' /etc/mkinitcpio.conf
+
         # Enable boot splash
         sudo sed -i 's/$/ quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0/' /boot/loader/entries/archlinux.conf
+
+        # Apply mkinitcpio
+        sudo mkinitcpio -p linux
 
         # Setting fcitx config
         fcitx > /dev/null 2>&1 &
