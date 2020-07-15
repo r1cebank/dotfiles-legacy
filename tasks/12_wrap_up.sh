@@ -22,10 +22,15 @@ function wrap_up_run() {
     elif [ "$PLATFORM" = "arch" ]; then
         # Force Xorg login
         sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
+        # Set plymouth theme
+        sudo plymouth-set-default-theme -R arch-logo
         # Fix yubikey-agent service
         # sudo sed -i 's/multi-user.target/default.target/g' /usr/lib/systemd/user/yubikey-agent.service
         # systemctl daemon-reload --user
         # systemctl --user enable --now yubikey-agent
+
+        # Enable boot splash
+        sudo sed -i 's/$/ quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0/' /boot/loader/entries/archlinux.conf
 
         # Setting fcitx config
         fcitx > /dev/null 2>&1 &
