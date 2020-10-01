@@ -1,11 +1,8 @@
-### Install PowerShell Modules
-Write-Host "Installing PowerShell Modules..." -ForegroundColor "Yellow"
-Install-Module Posh-Git -Scope CurrentUser -Force
-Install-Module PSWindowsUpdate -Scope CurrentUser -Force
-
+$downloadDest = [System.IO.Path]::GetTempFileName()
+$extractDest = [System.IO.Path]::GetTempPath()
 ### Download the archive
-(New-Object Net.WebClient).DownloadFile("https://github.com/r1cebank/dotfiles/archive/master.zip", "$env:temp\dotfiles.zip")
-Expand-Archive -LiteralPath $env:temp\dotfiles.zip -DestinationPath $env:temp\dotfiles
+(New-Object Net.WebClient).DownloadFile("https://github.com/r1cebank/dotfiles/archive/master.zip", "$downloadDest")
+Expand-Archive -LiteralPath $downloadDest -DestinationPath $extractDest
 
 ### Run the installation
-Invoke-Expression -Command $env:temp\dotfiles\dotfiles-master\setup.ps1
+Invoke-Expression -Command $extractDest\dotfiles-master\installer.ps1
