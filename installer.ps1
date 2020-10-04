@@ -51,3 +51,6 @@ foreach ($line in Get-Content .\windows\packages\packages.pinned) {
 foreach ($line in Get-Content .\windows\packages\packages.list) {
     choco install $line --limit-output
 }
+
+### Run the installation
+Invoke-Expression -Command .\windows\settings\ShowIcon.ps1
