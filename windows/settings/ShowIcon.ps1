@@ -1,7 +1,7 @@
 ## ==============================================
 ## Show Desktop Icons
 ## ==============================================
-
+Write-Host "Setting Desktop Icons..." -ForegroundColor "Yellow"
 $ErrorActionPreference = "SilentlyContinue"
 If ($Error) {$Error.Clear()}
 $RegistryPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"

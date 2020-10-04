@@ -5,6 +5,7 @@
         .DESCRIPTION
             Disable UAC though powershell
 #>
+Write-Host "Disabling UAC..." -ForegroundColor "Yellow"
 
 $osversion = (Get-CimInstance Win32_OperatingSystem).Version
 $version = $osversion.split(".")[0]
