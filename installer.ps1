@@ -39,15 +39,15 @@ if (Should-Run-Step "A")
         choco feature enable -n=allowGlobalConfirmation
     }
 
-    # ### Install Pinned Applications
-    # foreach ($line in Get-Content .\windows\packages\packages.pinned) {
-    #     choco install $line --limit-output; <# pin; evergreen #> choco pin add --name $line --limit-output
-    # }
+    ### Install Pinned Applications
+    foreach ($line in Get-Content .\windows\packages\packages.pinned) {
+        choco install $line --limit-output; <# pin; evergreen #> choco pin add --name $line --limit-output
+    }
 
-    # ### Install Regular Applications
-    # foreach ($line in Get-Content .\windows\packages\packages.list) {
-    #     choco install $line --limit-output
-    # }
+    ### Install Regular Applications
+    foreach ($line in Get-Content .\windows\packages\packages.list) {
+        choco install $line --limit-output
+    }
 
     ### Show desktop icons
     Invoke-Expression -Command $scriptPath\windows\settings\ShowIcon.ps1
@@ -60,9 +60,10 @@ if (Should-Run-Step "A")
 
 if (Should-Run-Step "B") 
 {
-    Read-Host -Prompt "Press Enter to exit"
     ### Install Post Reboot Packages
-    choco install wsl-ubuntu-2004 --limit-output
+    foreach ($line in Get-Content $scriptPat\windows\packages\packages.postreboot) {
+        choco install $line --limit-output
+    }
     Wait-For-Keypress "Install script Complete, press any key to exit script..."
 }
 
