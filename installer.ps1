@@ -52,5 +52,8 @@ foreach ($line in Get-Content .\windows\packages\packages.list) {
     choco install $line --limit-output
 }
 
-### Run the installation
+### Show desktop icons
 Invoke-Expression -Command .\windows\settings\ShowIcon.ps1
+
+### Disable UAC
+Invoke-Expression -Command .\windows\settings\DisableUAC.ps1
