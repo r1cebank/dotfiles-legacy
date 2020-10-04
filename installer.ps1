@@ -1,3 +1,4 @@
+param($Step="A")
 # -------------------------------------
 # Function Globals
 # -------------------------------------
@@ -102,7 +103,6 @@ if (!(Verify-Elevated)) {
     exit
 }
 
-param($Step="A")
 Clear-Any-Restart
 
 if (Should-Run-Step "A") 
