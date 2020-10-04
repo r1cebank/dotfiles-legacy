@@ -8,7 +8,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 $script = $myInvocation.MyCommand.Definition
 $scriptPath = Split-Path -parent $script
 . (Join-Path $scriptpath .\windows\functions.ps1)
-
+$ErrorActionPreference = "Stop"
 function Verify-Elevated {
     # Get the ID and security principal of the current user account
     $myIdentity = [System.Security.Principal.WindowsIdentity]::GetCurrent()
