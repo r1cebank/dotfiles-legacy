@@ -50,21 +50,21 @@ if (Should-Run-Step "A")
 {
     ### Chocolatey
     Write-Host "Installing Chocolatey..." -ForegroundColor "Yellow"
-    if ((which cinst) -eq $null) {
-        iex (new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')
-        Refresh-Environment
-        choco feature enable -n=allowGlobalConfirmation
-    }
+    # if ((which cinst) -eq $null) {
+    #     iex (new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')
+    #     Refresh-Environment
+    #     choco feature enable -n=allowGlobalConfirmation
+    # }
 
-    ### Install Pinned Applications
-    foreach ($line in Get-Content .\windows\packages\packages.pinned) {
-        choco install $line --limit-output; <# pin; evergreen #> choco pin add --name $line --limit-output
-    }
+    # ### Install Pinned Applications
+    # foreach ($line in Get-Content .\windows\packages\packages.pinned) {
+    #     choco install $line --limit-output; <# pin; evergreen #> choco pin add --name $line --limit-output
+    # }
 
-    ### Install Regular Applications
-    foreach ($line in Get-Content .\windows\packages\packages.list) {
-        choco install $line --limit-output
-    }
+    # ### Install Regular Applications
+    # foreach ($line in Get-Content .\windows\packages\packages.list) {
+    #     choco install $line --limit-output
+    # }
 
     ### Show desktop icons
     Invoke-Expression -Command .\windows\settings\ShowIcon.ps1
