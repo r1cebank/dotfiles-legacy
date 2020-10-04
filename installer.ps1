@@ -1,4 +1,7 @@
 param($Step="A")
+
+### Self elevating script
+if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
 # -------------------------------------
 # Imports
 # -------------------------------------
@@ -75,7 +78,6 @@ if (Should-Run-Step "A")
 if (Should-Run-Step "B") 
 {
     ### Install Post Reboot Packages
-	choco install wsl-ubuntu-2004 --limit-output
+    choco install wsl-ubuntu-2004 --limit-output
+    Wait-For-Keypress "Install script Complete, press any key to exit script..."
 }
-
-Wait-For-Keypress "Install script Complete, press any key to exit script..."
