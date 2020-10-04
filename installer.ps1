@@ -50,10 +50,10 @@ if (Should-Run-Step "A")
     # }
 
     ### Show desktop icons
-    Invoke-Expression -Command .\windows\settings\ShowIcon.ps1
+    Invoke-Expression -Command $scriptPath\windows\settings\ShowIcon.ps1
 
     ### Disable UAC
-    Invoke-Expression -Command .\windows\settings\DisableUAC.ps1
+    Invoke-Expression -Command $scriptPath\windows\settings\DisableUAC.ps1
 	Wait-For-Keypress "The test script will continue after a reboot, press any key to reboot..." 
 	Restart-And-Resume $script "B"
 }
