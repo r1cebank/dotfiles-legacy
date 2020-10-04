@@ -40,12 +40,12 @@ if (Should-Run-Step "A")
     }
 
     ### Install Pinned Applications
-    foreach ($line in Get-Content .\windows\packages\packages.pinned) {
+    foreach ($line in Get-Content $scriptPath\windows\packages\packages.pinned) {
         choco install $line --limit-output; <# pin; evergreen #> choco pin add --name $line --limit-output
     }
 
     ### Install Regular Applications
-    foreach ($line in Get-Content .\windows\packages\packages.list) {
+    foreach ($line in Get-Content $scriptPath\windows\packages\packages.list) {
         choco install $line --limit-output
     }
 
