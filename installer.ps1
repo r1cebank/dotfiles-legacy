@@ -33,27 +33,43 @@ if (!(Verify-Elevated)) {
     exit
 }
 
+function Install-Packages {
+    ### Chocolatey
+    Write-Host "Installing Chocolatey..." -ForegroundColor "Yellow"
+    if ((which cinst) -eq $null) {
+        iex (new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')
+        Refresh-Environment
+        choco feature enable -n=allowGlobalConfirmation
+    }
 
-### Chocolatey
-Write-Host "Installing Chocolatey..." -ForegroundColor "Yellow"
-if ((which cinst) -eq $null) {
-    iex (new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')
-    Refresh-Environment
-    choco feature enable -n=allowGlobalConfirmation
+    ### Install Pinned Applications
+    foreach ($line in Get-Content .\windows\packages\packages.pinned) {
+        choco install $line --limit-output; <# pin; evergreen #> choco pin add --name $line --limit-output
+    }
+
+    ### Install Regular Applications
+    foreach ($line in Get-Content .\windows\packages\packages.list) {
+        choco install $line --limit-output
+    }
+
+    ### Show desktop icons
+    Invoke-Expression -Command .\windows\settings\ShowIcon.ps1
+
+    ### Disable UAC
+    Invoke-Expression -Command .\windows\settings\DisableUAC.ps1
 }
 
-### Install Pinned Applications
-foreach ($line in Get-Content .\windows\packages\packages.pinned) {
-    choco install $line --limit-output; <# pin; evergreen #> choco pin add --name $line --limit-output
+function Install-Post-Reboot {
+    ### Install Post reboot applications
+    foreach ($line in Get-Content .\windows\packages\packages.postreboot) {
+        choco install $line --limit-output
+    }
 }
 
-### Install Regular Applications
-foreach ($line in Get-Content .\windows\packages\packages.list) {
-    choco install $line --limit-output
+workflow Install-And-Reboot {
+    Install-Packages
+    Restart-Computer -Wait
+    Install-Post-Reboot
 }
 
-### Show desktop icons
-Invoke-Expression -Command .\windows\settings\ShowIcon.ps1
-
-### Disable UAC
-Invoke-Expression -Command .\windows\settings\DisableUAC.ps1
+Install-And-Reboot

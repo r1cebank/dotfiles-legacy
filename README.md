@@ -22,8 +22,11 @@ This should do the trick.
 Updates dotfiles from Github repo, also updates homebrew, homebrew packages and
 global NPM packages.
 
+### Windows Support
 
-
+```powershell
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/r1cebank/dotfiles/master/setup.ps1'))"
+```
 
 ## Notes
 1. In order to remove the need to `sudo` every time I install global npm
