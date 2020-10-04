@@ -50,11 +50,11 @@ if (Should-Run-Step "A")
 {
     ### Chocolatey
     Write-Host "Installing Chocolatey..." -ForegroundColor "Yellow"
-    # if ((which cinst) -eq $null) {
-    #     iex (new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')
-    #     Refresh-Environment
-    #     choco feature enable -n=allowGlobalConfirmation
-    # }
+    if ((which cinst) -eq $null) {
+        iex (new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')
+        Refresh-Environment
+        choco feature enable -n=allowGlobalConfirmation
+    }
 
     # ### Install Pinned Applications
     # foreach ($line in Get-Content .\windows\packages\packages.pinned) {
@@ -77,7 +77,10 @@ if (Should-Run-Step "A")
 
 if (Should-Run-Step "B") 
 {
+    Read-Host -Prompt "Press Enter to exit"
     ### Install Post Reboot Packages
     choco install wsl-ubuntu-2004 --limit-output
     Wait-For-Keypress "Install script Complete, press any key to exit script..."
 }
+
+Read-Host -Prompt "Press Enter to exit"
