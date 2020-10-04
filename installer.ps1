@@ -1,7 +1,7 @@
 param($Step="A")
 
 ### Self elevating script
-if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
+if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -NoExit -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
 # -------------------------------------
 # Imports
 # -------------------------------------
@@ -9,14 +9,6 @@ $script = $myInvocation.MyCommand.Definition
 $scriptPath = Split-Path -parent $script
 . (Join-Path $scriptpath .\windows\functions.ps1)
 $ErrorActionPreference = "Stop"
-function Verify-Elevated {
-    # Get the ID and security principal of the current user account
-    $myIdentity = [System.Security.Principal.WindowsIdentity]::GetCurrent()
-    $myPrincipal = new-object System.Security.Principal.WindowsPrincipal($myIdentity)
-    # Check to see if we are currently running "as Administrator"
-    return $myPrincipal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
-}
-
 # Reload the $env object from the registry
 function Refresh-Environment {
     $locations = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment',
@@ -34,15 +26,6 @@ function Refresh-Environment {
     $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
 }
 function which($name) { Get-Command $name -ErrorAction SilentlyContinue | Select-Object Definition }
-
-if (!(Verify-Elevated)) {
-    $newProcess = new-object System.Diagnostics.ProcessStartInfo "PowerShell";
-    $newProcess.Arguments = $myInvocation.MyCommand.Definition;
-    $newProcess.Verb = "runas";
-    [System.Diagnostics.Process]::Start($newProcess);
- 
-    exit
-}
 
 Clear-Any-Restart
 
