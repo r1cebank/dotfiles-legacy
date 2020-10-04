@@ -6,4 +6,4 @@ Expand-Archive -LiteralPath "$downloadDest.zip" -DestinationPath $extractDest
 
 Set-Location -Path $extractDest\dotfiles-master
 ### Run the installation
-Invoke-Expression "$extractDest\dotfiles-master\installer.ps1 -Step A"
+Invoke-Expression -Command $extractDest\dotfiles-master\installer.ps1
