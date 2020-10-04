@@ -66,5 +66,3 @@ if (Should-Run-Step "B")
     }
     Wait-For-Keypress "Install script Complete, press any key to exit script..."
 }
-
-Read-Host -Prompt "Press Enter to exit"
