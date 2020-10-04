@@ -136,10 +136,8 @@ if (Should-Run-Step "A")
 
 if (Should-Run-Step "B") 
 {
-	### Install Post Reboot Applications
-    foreach ($line in Get-Content .\windows\packages\packages.postreboot) {
-        choco install $line --limit-output
-    }
+    ### Install Post Reboot Packages
+	choco install wsl-ubuntu-2004 --limit-output
 }
 
 Wait-For-Keypress "Install script Complete, press any key to exit script..."
