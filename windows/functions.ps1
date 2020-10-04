@@ -64,6 +64,6 @@ function Clear-Any-Restart([string] $key=$global:restartKey)
 
 function Restart-And-Resume([string] $script, [string] $step) 
 {
-	Restart-And-Run $global:restartKey "$global:powershell $script -Verb runAs -ExecutionPolicy Bypass -NoExit -Step $step"
+	Restart-And-Run $global:restartKey "$global:powershell -ExecutionPolicy Bypass -NoExit $script -Step $step"
 }
 
