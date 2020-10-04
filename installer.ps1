@@ -61,7 +61,7 @@ if (Should-Run-Step "A")
 if (Should-Run-Step "B") 
 {
     ### Install Post Reboot Packages
-    foreach ($line in Get-Content $scriptPat\windows\packages\packages.postreboot) {
+    foreach ($line in Get-Content $scriptPath\windows\packages\packages.postreboot) {
         choco install $line --limit-output
     }
     Wait-For-Keypress "Install script Complete, press any key to exit script..."
