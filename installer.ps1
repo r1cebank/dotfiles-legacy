@@ -1,19 +1,7 @@
 param($Step="A")
 
-function is-admin ()
-{
-    $user = [security.principal.windowsidentity]::getcurrent()
-    $role = new-object security.principal.windowsprincipal $user
-    $role.isinrole( [security.principal.windowsbuiltinrole]::administrator )
-}
- 
-if (!(is-admin))
-{
-    $args = $myinvocation.mycommand.definition
-    start-process powershell -ExecutionPolicy Bypass -argumentlist $args -verb 'runas'
-    exit
-}
-
+### Self elevating script
+if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -NoExit -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs -argumentlist $args; exit }
 # -------------------------------------
 # Imports
 # -------------------------------------
