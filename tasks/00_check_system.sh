@@ -18,11 +18,12 @@ function check_system_run() {
       if hash pacman >/dev/null 2>&1; then
         PLATFORM="arch"
       fi
-      if ask "Is this a headless host?"; then
-        HOST_TYPE="headless"
-      fi
       if grep -q Microsoft /proc/version; then
         HOST_TYPE="wsl"
+      else
+        if ask "Is this a headless host?"; then
+          HOST_TYPE="headless"
+        fi
       fi
     fi
     settings_set "HOST_TYPE" $HOST_TYPE
