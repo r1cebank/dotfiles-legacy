@@ -21,6 +21,9 @@ function check_system_run() {
       if ask "Is this a headless host?"; then
         HOST_TYPE="headless"
       fi
+      if grep -q Microsoft /proc/version; then
+        HOST_TYPE="wsl"
+      fi
     fi
     settings_set "HOST_TYPE" $HOST_TYPE
     settings_set "PLATFORM" $PLATFORM
