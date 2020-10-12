@@ -16,6 +16,7 @@ wait_file() {
 function wrap_up_run() {
     PLATFORM=$(settings_get "PLATFORM")
     if [ "$HOST_TYPE" = "wsl" ]; then
+        sed -i 's/bin\"/bin:\/mnt\/c\/Program Files\/Microsoft VS Code\/bin\"/g' $HOME/.dotfiles/zsh/path.zsh
         return ${E_SUCCESS}
     fi
     if [ "$PLATFORM" = "debian" ]; then
