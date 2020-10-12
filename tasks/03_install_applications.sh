@@ -86,5 +86,10 @@ function install_applications_run() {
     else
         log_info "skipping, headless host"
     fi
+    if [ "$HOST_TYPE" = "wsl" ]; then
+        if [ "$PLATFORM" = "debian" ]; then
+            log_info "installing wsl packages"
+        fi
+    fi
     return ${E_SUCCESS}
 }

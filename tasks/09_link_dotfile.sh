@@ -16,6 +16,8 @@ function link_dotfile_run() {
     # custom linkage
 
     # VS Code
-    link_file "$DOTFILES_ROOT/code/settings.json" "$HOME/.config/Code/User/settings.json"
-    link_file "$DOTFILES_ROOT/code/keybindings.json" "$HOME/.config/Code/User/keybindings.json"
+    if hash code >/dev/null 2>&1; then
+        link_file "$DOTFILES_ROOT/code/settings.json" "$HOME/.config/Code/User/settings.json"
+        link_file "$DOTFILES_ROOT/code/keybindings.json" "$HOME/.config/Code/User/keybindings.json"
+    fi
 }

@@ -15,6 +15,9 @@ wait_file() {
 
 function wrap_up_run() {
     PLATFORM=$(settings_get "PLATFORM")
+    if [ "$HOST_TYPE" = "wsl" ]; then
+        return ${E_SUCCESS}
+    fi
     if [ "$PLATFORM" = "debian" ]; then
         if ask "Reboot?"; then
             sudo reboot
