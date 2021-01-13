@@ -24,6 +24,6 @@ yubioath-desktop
 !yubikey-agent
 !gnupg-scdaemon-shared-access
 fcitx-configtool
-fcitx-sogouimebs
+fcitx-sogoupinyin
 gdm-plymouth
 plymouth-theme-arch-logo
