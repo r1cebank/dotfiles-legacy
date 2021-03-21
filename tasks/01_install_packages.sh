@@ -25,8 +25,6 @@ function install_packages_run() {
             sudo pacman -S "$in" --noconfirm;
         done < $DOTFILES_ROOT/system/packages.arch.list
 
-        yay -S kr-bin --noconfirm
-
         # enable pcscd service
         sudo systemctl enable pcscd
         sudo systemctl start pcscd
