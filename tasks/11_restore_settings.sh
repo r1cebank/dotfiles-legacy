@@ -27,7 +27,7 @@ function restore_settings_run() {
             if hash gnome-shell >/dev/null 2>&1; then
                 log_info "loading gnome settings"
                 dconf load / < $DOTFILES_ROOT/gnome/dconf-settings.ini
-                # killall -SIGQUIT gnome-shell
+                killall -SIGQUIT gnome-shell
             fi
         fi
         # start the plank dock
@@ -37,11 +37,12 @@ function restore_settings_run() {
             mkdir -p $HOME/.config/plank/dock1/launchers
             rm -rf $HOME/.config/plank/dock1/launchers/*
             cp $DOTFILES_ROOT/plank/dock1/*.dockitem $HOME/.config/plank/dock1/launchers
-            setsid plank &>/dev/null
+            setsid plank &>/dev/null &
         fi
     else
         log_info "not running for headless host"
     fi
+    log_info "updating default shell"
     # Changing default shell
     chsh -s $(which zsh);
     log_info "you need to logout to see change take effect"
