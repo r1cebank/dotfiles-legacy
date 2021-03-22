@@ -11,11 +11,12 @@ function gnome_extensions_run() {
         log_info "Installing gnome extensions."
         while read in; do
             until $DOTFILES_ROOT/bin/gnomex install "$in"
+            sleep 1
+            killall -SIGQUIT gnome-shell
             do
                 echo "Try to install $in"
             done
         done < $DOTFILES_ROOT/gnome/extensions.list
-        # gnome-shell --replace &>/dev/null & disown
     else
         log_info "Did not find gnome, skipping gnome extensions."
     fi
