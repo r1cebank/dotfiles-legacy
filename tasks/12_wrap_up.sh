@@ -41,6 +41,15 @@ function wrap_up_run() {
 
         # Enable boot splash
         sudo sed -i '$s/$/ quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0/' /boot/loader/entries/archlinux.conf
+        
+        # Make linux-zen default if installed
+        if [ -f /boot/loader/entries/archlinux-zen.conf ]; then
+            sudo sed -i '$s/$/ quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0/' /boot/loader/entries/archlinux-zen.conf
+            sudo sed -i 's/ archlinux/ archlinux-zen/' /boot/loader/loader.conf
+        fi
+        
+        # Reduce systemd delay
+        sudo sed -i 's/timeout .*/ timeout 3/' /boot/loader/loader.conf
 
         # Apply mkinitcpio
         sudo mkinitcpio -p linux
