@@ -12,7 +12,6 @@ function gnome_extensions_run() {
         while read in; do
             until $DOTFILES_ROOT/bin/gnomex install "$in"
             sleep 1
-            killall -SIGQUIT gnome-shell
             do
                 echo "Try to install $in"
             done
