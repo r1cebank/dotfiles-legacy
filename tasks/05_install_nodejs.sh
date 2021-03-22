@@ -11,7 +11,7 @@ function install_nodejs_run() {
         log_info "Installing Node.js via nvm for you."
 
         # Install n and latest LTS node.js
-        curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
         # Reload nodejs environment variables
         export NVM_DIR="$HOME/.nvm"
@@ -20,8 +20,8 @@ function install_nodejs_run() {
 
 
         # Install the last node lts
-        nvm install 12
-        nvm alias default 12
+        nvm install lts/*
+        nvm alias default lts/*
 
     else
         log_info "You already have nvm installed"
