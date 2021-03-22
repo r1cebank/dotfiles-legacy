@@ -11,9 +11,9 @@ function gnome_extensions_run() {
         log_info "Installing gnome extensions."
         while read in; do
             until $DOTFILES_ROOT/bin/gnomex install "$in"
-            sleep 1
             do
                 echo "Try to install $in"
+                sleep 1
             done
         done < $DOTFILES_ROOT/gnome/extensions.list
     else
