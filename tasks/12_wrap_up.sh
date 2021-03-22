@@ -45,7 +45,7 @@ function wrap_up_run() {
         # Make linux-zen default if installed
         if [ -f /boot/loader/entries/archlinux-zen.conf ]; then
             sudo sed -i '$s/$/ quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0/' /boot/loader/entries/archlinux-zen.conf
-            sudo sed -i 's/ archlinux/ archlinux-zen/' /boot/loader/loader.conf
+            bootctl set-default archlinux-zen
         fi
         
         # Reduce systemd delay
