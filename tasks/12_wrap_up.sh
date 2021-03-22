@@ -54,7 +54,7 @@ function wrap_up_run() {
         }
         log_info "Waiting for file to finish writing..."
         sleep 10
-        sed -i 's/sogouimebs:False/sogouimebs:True/g' $HOME/.config/fcitx/profile
+        sed -i 's/sogoupinyin:False/sogoupinyin:True/g' $HOME/.config/fcitx/profile
         if ask "Reboot?"; then
             sudo reboot
         fi
