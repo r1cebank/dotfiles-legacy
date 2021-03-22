@@ -13,6 +13,7 @@ function gnome_extensions_run() {
             until $DOTFILES_ROOT/bin/gnomex install "$in"
             do
                 echo "Try to install $in"
+                sleep 2
             done
             sleep 2
         done < $DOTFILES_ROOT/gnome/extensions.list
