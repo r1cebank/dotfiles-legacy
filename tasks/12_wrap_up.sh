@@ -40,7 +40,7 @@ function wrap_up_run() {
         sudo sed -i 's/HOOKS=(base udev systemd/HOOKS=(base udev systemd sd-plymouth/g' /etc/mkinitcpio.conf
 
         # Enable boot splash
-        sudo sed -i 's/$/ quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0/' /boot/loader/entries/archlinux.conf
+        sudo sed -i '$s/$/ quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0/' /boot/loader/entries/archlinux.conf
 
         # Apply mkinitcpio
         sudo mkinitcpio -p linux
