@@ -8,21 +8,13 @@ function install_fonts_run() {
     PLATFORM=$(settings_get "PLATFORM")
     HOST_TYPE=$(settings_get "HOST_TYPE")
     if [ "$HOST_TYPE" = "desktop" ]; then
-        if [ "$PLATFORM" = "debian" ]; then
-            mkdir -p $HOME/.fonts
-            local overwrite_all=false backup_all=false skip_all=false
-
-            sudo apt-get install fonts-powerline
-
-            for src in $(find -H "$DOTFILES_ROOT/fonts" -maxdepth 2 -name '*.symlink')
-            do
-                dst="$HOME/.fonts/$(basename "${src%.*}")"
-                link_file "$src" "$dst"
-            done
-            fc-cache -f -v
-        elif [ "$PLATFORM" = "arch" ]; then
-            log_info "Installing system fonts."
+        if [ "$PLATFORM" = "arch" ]; then
+            log_info "Installing fonts from package."
             while read in; do yay -S "$in" --noconfirm; done < $DOTFILES_ROOT/system/fonts.arch.list
+            
+            log_info "Installing fonts from file."
+            cp -R $DOTFILES_ROOT/fonts/* $HOME/.local/share/fonts
+            fc-cache -f -v
         fi
     fi
     return ${E_SUCCESS}
