@@ -1,6 +1,7 @@
 base-devel
 thefuck
 python3
+xdotool
 wget
 fwupd
 vim
