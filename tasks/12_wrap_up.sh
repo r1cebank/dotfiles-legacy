@@ -53,7 +53,7 @@ function wrap_up_run() {
         sudo sed -i 's/timeout .*/ timeout 3/' /boot/loader/loader.conf
 
         # Apply mkinitcpio
-        sudo mkinitcpio -p linux
+        sudo mkinitcpio -P
 
         # Setting fcitx config
         fcitx > /dev/null 2>&1 &
