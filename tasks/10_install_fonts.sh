@@ -6,6 +6,7 @@ function install_fonts_init() {
 
 function install_fonts_run() {
     PLATFORM=$(settings_get "PLATFORM")
+    HOST_TYPE=$(settings_get "HOST_TYPE")
     if [ "$HOST_TYPE" = "desktop" ]; then
         if [ "$PLATFORM" = "debian" ]; then
             mkdir -p $HOME/.fonts
