@@ -15,8 +15,8 @@ function gnome_extensions_run() {
                 echo "Try to install $in"
                 sleep 2
             done
-            sleep 1
             xdotool key "Alt+F2+r" && sleep 0.5 && xdotool key "Return"
+            sleep 4
         done < $DOTFILES_ROOT/gnome/extensions.list
     else
         log_info "Did not find gnome, skipping gnome extensions."
