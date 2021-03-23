@@ -1,5 +1,6 @@
 gnome-extra
 plank
+xdotool-git
 firefox
 !google-chrome
 telegram-desktop
