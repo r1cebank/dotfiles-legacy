@@ -18,7 +18,7 @@ function check_system_run() {
       if hash pacman >/dev/null 2>&1; then
         PLATFORM="arch"
       fi
-      if grep -q Microsoft /proc/version; then
+      if grep -q microsoft /proc/version; then
         HOST_TYPE="wsl"
       else
         if ask "Is this a headless host?"; then
