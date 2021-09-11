@@ -17,3 +17,5 @@ pacman-contrib
 jdk8-openjdk
 picom
 nitrogen
+pcmanfm
+dmenu
