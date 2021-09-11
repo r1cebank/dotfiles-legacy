@@ -21,3 +21,5 @@ pcmanfm
 dmenu
 alsa-utils
 xf86-video-intel
+xorg-xrandr
+maim
