@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 
 pictures_dir="$(xdg-user-dir PICTURES 2> /dev/null)"
