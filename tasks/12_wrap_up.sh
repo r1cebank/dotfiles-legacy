@@ -29,12 +29,10 @@ function wrap_up_run() {
         sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
         # Set plymouth theme
         sudo plymouth-set-default-theme -R arch-logo
-        # Fix yubikey-agent service
-        # sudo sed -i 's/multi-user.target/default.target/g' /usr/lib/systemd/user/yubikey-agent.service
-        # systemctl daemon-reload --user
-        # systemctl --user enable --now yubikey-agent
 
-        # Add plymouth hook
+        # Apply Xorg settings
+
+        # Apply wakelock service
 
         # Enable intel module
         sudo sed -i 's/MODULES=()/MODULES=(i915)/g' /etc/mkinitcpio.conf
@@ -42,32 +40,18 @@ function wrap_up_run() {
 
         # Enable boot splash
         sudo sed -i '$s/$/ quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0/' /boot/loader/entries/archlinux.conf
-        
+
         # Make linux-zen default if installed
         if [ -f /boot/loader/entries/archlinux-zen.conf ]; then
             sudo sed -i '$s/$/ quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0/' /boot/loader/entries/archlinux-zen.conf
             bootctl set-default archlinux-zen.conf
         fi
-        
+
         # Reduce systemd delay
         sudo sed -i 's/timeout .*/ timeout 3/' /boot/loader/loader.conf
 
         # Apply mkinitcpio
         sudo mkinitcpio -P
-
-        # Setting fcitx config
-        fcitx > /dev/null 2>&1 &
-        log_info "Waiting for fcitx to start"
-        wait_file "$HOME/.config/fcitx/profile" 5 || {
-            log_error "Fcitx profile does not exist after 5 secs..."
-            return ${E_FAILURE}
-        }
-        log_info "Waiting for file to finish writing..."
-        sleep 10
-        sed -i 's/sogoupinyin:False/sogoupinyin:True/g' $HOME/.config/fcitx/profile
-        if ask "Reboot?"; then
-            sudo reboot
-        fi
     fi
     return ${E_SUCCESS}
 }

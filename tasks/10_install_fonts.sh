@@ -11,7 +11,7 @@ function install_fonts_run() {
         if [ "$PLATFORM" = "arch" ]; then
             log_info "Installing fonts from package."
             while read in; do yay -S "$in" --needed --noconfirm; done < $DOTFILES_ROOT/system/fonts.arch.list
-            
+
             log_info "Installing fonts from file."
             mkdir -p $HOME/.local/share/fonts
             cp -R $DOTFILES_ROOT/fonts/* $HOME/.local/share/fonts

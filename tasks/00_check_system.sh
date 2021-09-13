@@ -7,7 +7,7 @@ function check_system_init() {
 
 function check_system_run() {
     # Platform detection
-    # Mainly to differentiate between OS X, Ubuntu and CentOS
+    # Mainly to differentiate between OS X, Linux and WSL
     PLATFORM=$(uname | tr "[:upper:]" "[:lower:]")
     HOST_TYPE="desktop"
     if [ "$PLATFORM" = "linux" ]; then

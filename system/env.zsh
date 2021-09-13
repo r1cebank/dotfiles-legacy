@@ -1,6 +1,6 @@
 
 # Setup PATH
-export PATH="./bin:$ZSH/bin:$PATH"
+export PATH="$ZSH/bin:$PATH"
 export MANPATH="$MANPATH"
 
 # Preferred editor for local and remote sessions

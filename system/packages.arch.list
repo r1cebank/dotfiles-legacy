@@ -10,11 +10,11 @@ curl
 ccid
 pcsc-tools
 opensc
-nim
 nano
-chrome-gnome-shell
+fcitx5
+fcitx5-chinese-addons
+fcitx5-configtool
 pacman-contrib
-jdk8-openjdk
 picom
 nitrogen
 pcmanfm

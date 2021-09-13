@@ -5,19 +5,24 @@ function link_dotfile_init() {
 }
 
 function link_dotfile_run() {
-    local overwrite_all=false backup_all=false skip_all=false
-
-    for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink')
+    for src in $(find $DOTFILES_ROOT -maxdepth 1 -mindepth 1 -type d -not -path '.*')
     do
-        dst="$HOME/.$(basename "${src%.*}")"
-        link_file "$src" "$dst"
+        # link using stow
+        log_info "Installing dotfile for $(basename $src)"
+        # check and run prelink script
+        if [ -f "$src/pre.sh" ]; then
+            log_info "Running prelink script for $(basename $src)"
+            bash "$src/pre.sh"
+        fi
+        # check for stow directory
+        if [ -d "$src/stow" ]; then
+            log_info "Running stow for $(basename $src)"
+            stow $src/stow
+        fi
+        # check and run postlink script
+        if [ -f "$src/post.sh" ]; then
+            log_info "Running postlink script for $(basename $src)"
+            bash "$src/post.sh"
+        fi
     done
-
-    # custom linkage
-
-    # VS Code
-    if hash code >/dev/null 2>&1; then
-        link_file "$DOTFILES_ROOT/code/settings.json" "$HOME/.config/Code/User/settings.json"
-        link_file "$DOTFILES_ROOT/code/keybindings.json" "$HOME/.config/Code/User/keybindings.json"
-    fi
 }

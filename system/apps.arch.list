@@ -1,5 +1,5 @@
 gnome-extra
-plank
+!plank
 i3lock-color
 firefox
 !google-chrome
@@ -23,8 +23,8 @@ yubikey-manager-qt
 yubioath-desktop
 !yubikey-agent
 !gnupg-scdaemon-shared-access
-fcitx-configtool
-fcitx-sogoupinyin
-sogoupinyin-skin-roulan
+!fcitx-configtool
+!fcitx-sogoupinyin
+!sogoupinyin-skin-roulan
 gdm-plymouth
 plymouth-theme-arch-logo
