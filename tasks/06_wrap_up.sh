@@ -25,14 +25,15 @@ function wrap_up_run() {
             sudo reboot
         fi
     elif [ "$PLATFORM" = "arch" ]; then
-        # Force Xorg login
-        sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
         # Set plymouth theme
         sudo plymouth-set-default-theme -R arch-logo
 
         # Apply Xorg settings
+        sudo cp -f $DOTFILES_ROOT/xorg/*.conf /etc/X11/xorg.conf.d/
 
         # Apply wakelock service
+        sudo cp -f $DOTFILES_ROOT/system/wakelock@.service /etc/systemd/system/
+        sudo systemctl enable wakelock@$(whoami) --now
 
         # Enable intel module
         sudo sed -i 's/MODULES=()/MODULES=(i915)/g' /etc/mkinitcpio.conf
