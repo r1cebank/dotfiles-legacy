@@ -31,6 +31,9 @@ function wrap_up_run() {
         # Apply Xorg settings
         sudo cp -f $DOTFILES_ROOT/xorg/*.conf /etc/X11/xorg.conf.d/
 
+        # Copy over wallpapers
+        cp -R $DOTFILES_ROOT/Wallpapers $HOME/Pictures
+
         # Apply wakelock service
         sudo cp -f $DOTFILES_ROOT/system/wakelock@.service /etc/systemd/system/
         sudo systemctl enable wakelock@$(whoami) --now
