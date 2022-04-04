@@ -33,7 +33,10 @@ local application_tags = {
   docs = {
     "Gedit",
     "Code",
-    "obsidian"
+    "Vivado",
+    "trilium notes",
+    "obsidian",
+    "Blender"
   },
   file = {
     "Pcmanfm",

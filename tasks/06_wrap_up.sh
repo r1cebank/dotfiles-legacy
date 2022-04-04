@@ -38,6 +38,12 @@ function wrap_up_run() {
         sudo cp -f $DOTFILES_ROOT/system/wakelock@.service /etc/systemd/system/
         sudo systemctl enable wakelock@$(whoami) --now
 
+        # Disable and enable python3-validity (fprint helper T480)
+        sudo systemctl stop python3-validity
+        sudo validity-sensors-firmware
+        sudo python3 /usr/share/python-validity/playground/factory-reset.py
+        sudo systemctl start python3-validity
+
         # Enable intel module
         sudo sed -i 's/MODULES=()/MODULES=(i915)/g' /etc/mkinitcpio.conf
         sudo sed -i 's/HOOKS=(base udev systemd/HOOKS=(base udev systemd sd-plymouth/g' /etc/mkinitcpio.conf

@@ -24,10 +24,6 @@ function install_packages_run() {
             sudo pacman -S "$in" --needed --noconfirm;
         done < $DOTFILES_ROOT/system/packages.arch.list
 
-        log_info "installing vim plug..."
-        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
         # enable pcscd service
         sudo systemctl enable pcscd
         sudo systemctl start pcscd

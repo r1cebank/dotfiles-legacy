@@ -14,5 +14,4 @@ run xmousepasteblock
 run /usr/bin/fcitx5
 run nm-applet
 run xss-lock --transfer-sleep-lock -- ~/.dotfiles/bin/lock
-
-xautolock -detectsleep -time 30 -locker "~/.dotfiles/bin/lock" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
+run synclient RightButtonAreaLeft=0 RightButtonAreaTop=0

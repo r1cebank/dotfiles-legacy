@@ -28,3 +28,5 @@ yubioath-desktop
 !sogoupinyin-skin-roulan
 gdm-plymouth
 plymouth-theme-arch-logo
+ncurses5-compat-libs
+python-validity
